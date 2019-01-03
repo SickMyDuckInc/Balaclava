@@ -64,7 +64,7 @@ public class EnemyVision : MonoBehaviour
             {
                 if (!other.gameObject.GetComponentInChildren<EnemyVision>().enabledObstacle && !enabledObstacle)
                 {
-                    Debug.Log(gameObject.name + " :obstacle enabled");
+                    //Debug.Log(gameObject.name + " :obstacle enabled");
                     agent.isStopped = true;
                     obstacle.enabled = true;
                     obstacle.carveOnlyStationary = true;
@@ -100,7 +100,7 @@ public class EnemyVision : MonoBehaviour
         {
             if (enabledObstacle)
             {
-                Debug.Log(gameObject.name + " :obstacle Disabled");
+               // Debug.Log(gameObject.name + " :obstacle Disabled");
                 obstacle.carveOnlyStationary = false;
                 obstacle.enabled = false;
                 agent.isStopped = false;

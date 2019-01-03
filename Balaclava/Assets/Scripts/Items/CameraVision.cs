@@ -8,17 +8,21 @@ public class CameraVision : MonoBehaviour
     RaycastHit hit;
     public GameObject camera;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))
         {
             //Debug.Log("Player detected");
             playerDirection = other.gameObject.transform.position - camera.transform.position;
-            if(Physics.Raycast(camera.transform.position, playerDirection, out hit))
+            if (Physics.Raycast(camera.transform.position, playerDirection, out hit))
             {
                 if (hit.collider.gameObject.tag.Equals("Player"))
                 {
                     other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                    if (!CountDown.cd.callPolice)
+                    {
+                        CountDown.cd.ActivatePoliceTime();
+                    }                  
                 }
             }
         }

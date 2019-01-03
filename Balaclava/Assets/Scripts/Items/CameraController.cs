@@ -9,10 +9,13 @@ public class CameraController : MonoBehaviour {
     public float rangeVision;
 
     private bool positiveMovement;
+    private bool waitingTime;
+    private float timeToWait = 6f;
     
 	// Use this for initialization
 	void Start () {
         positiveMovement = true;
+        waitingTime = false;
 
         rightLimit = ConvertAngle(rightLimit);
         leftLimit = ConvertAngle(leftLimit);
@@ -20,9 +23,11 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        CameraMovement();
-        Detection();
-
+        if (!waitingTime)
+        {
+            CameraMovement();
+            //Detection();
+        }
     }
 
     private void CameraMovement()
@@ -36,7 +41,8 @@ public class CameraController : MonoBehaviour {
             }
             else
             {
-                positiveMovement = false;
+                StartCoroutine(CameraWaiting());
+                //positiveMovement = false;
             }
         }
         else
@@ -47,9 +53,22 @@ public class CameraController : MonoBehaviour {
             }
             else
             {
-                positiveMovement = true;
+                StartCoroutine(CameraWaiting());
+                //positiveMovement = true;
             }
         }
+    }
+
+    /// <summary>
+    /// The camera must wait a fixed time when reached the limit of observation to left or right
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator CameraWaiting()
+    {
+        waitingTime = true;
+        yield return new WaitForSeconds(timeToWait);
+        positiveMovement = !positiveMovement;
+        waitingTime = false;
     }
 
     private float ConvertAngle(float angle)
