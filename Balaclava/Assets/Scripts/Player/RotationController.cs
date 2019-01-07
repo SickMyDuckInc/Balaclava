@@ -8,8 +8,6 @@ public class RotationController : MonoBehaviour {
     public float sensitivity = 5.0f;
     public float smoothing = 2.0f;
 
-    public GameObject RotationJoystick;
-
     private bool enableRotation = true;
 
     GameObject character;
@@ -17,15 +15,14 @@ public class RotationController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Prueba para canvas en moviles
-        if (Application.platform == RuntimePlatform.WindowsPlayer)
+        if (Application.platform == RuntimePlatform.WindowsEditor ||  Application.platform == RuntimePlatform.WindowsPlayer)
         {
             Debug.Log("Entro en windowsPlayer");
-            RotationJoystick.SetActive(false);
         }
-        else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        else 
         {
+            this.enabled = false;
             Debug.Log("Entro en Android, IphonePlayer");
-            RotationJoystick.SetActive(true);
         }
 
         character = this.transform.parent.gameObject;
@@ -33,8 +30,10 @@ public class RotationController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (enableRotation)
         {
+            //not isDevice variables
             Vector2 md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
             md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));

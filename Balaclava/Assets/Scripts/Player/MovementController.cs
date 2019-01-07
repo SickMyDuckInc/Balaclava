@@ -6,35 +6,38 @@ public class MovementController : MonoBehaviour
 {
 
     public float speed = 10.0f;
-    public GameObject MovementJoystick;
     
     float translation;
     float straffe;
 
-
     // Use this for initialization
     void Start () {
-        //Prueba para canvas en moviles
-        if (Application.platform == RuntimePlatform.WindowsPlayer)
-        {
-            MovementJoystick.SetActive(false);
-        }
-        else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
-        {
-            MovementJoystick.SetActive(true);
-        }
 
+        //Prueba para canvas en moviles
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            Debug.Log("Entro en windowsPlayer");
+        }
+        else
+        {
+            Debug.Log("Entro en Android, IphonePlayer");
+            this.enabled = false;
+        }
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        translation = Input.GetAxis("Vertical") * speed;
-        straffe = Input.GetAxis("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
+	void Update () {      
 
-        transform.Translate(straffe, 0, translation);
+            //not isDevice inputs
+            translation = Input.GetAxis("Vertical") * speed;
+            straffe = Input.GetAxis("Horizontal") * speed;
+
+            translation *= Time.deltaTime;
+            straffe *= Time.deltaTime;
+
+            transform.Translate(straffe, 0, translation);
+           
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
