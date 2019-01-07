@@ -9,6 +9,7 @@ public class RotationController : MonoBehaviour {
     public float smoothing = 2.0f;
 
     public GameObject RotationJoystick;
+    public GameObject Hands;
 
     private bool enableRotation = true;
 
@@ -51,10 +52,22 @@ public class RotationController : MonoBehaviour {
     public void DisableRotation()
     {
         enableRotation = false;
+        DisableHands();
     }
 
     public void EnableRotation()
     {
         enableRotation = true;
+        EnableHands();
+    }
+
+    public void EnableHands()
+    {
+        Hands.SetActive(true);
+    }
+
+    public void DisableHands()
+    {
+        Hands.SetActive(false);
     }
 }
