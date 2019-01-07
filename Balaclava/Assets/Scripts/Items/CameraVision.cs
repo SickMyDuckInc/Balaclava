@@ -19,10 +19,7 @@ public class CameraVision : MonoBehaviour
                 if (hit.collider.gameObject.tag.Equals("Player"))
                 {
                     other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
-                    if (!CountDown.cd.callPolice)
-                    {
-                        CountDown.cd.ActivatePoliceTime();
-                    }                  
+                    CountDown.cd.ActivatePoliceTime();
                 }
             }
         }

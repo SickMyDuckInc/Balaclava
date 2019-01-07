@@ -172,6 +172,12 @@ Transform:
   m_Father: {fileID: 1805963321}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &524179760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1605939441684070, guid: ce5089f3caa5bb042a4d4c23a427bc82,
+    type: 3}
+  m_PrefabInstance: {fileID: 1207707357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &526834252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iluminated: {fileID: 2100000, guid: 9a6024a0374e47c4eb3c432a4651aeee, type: 2}
+  player: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!54 &649655041
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4591,6 +4599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 5
   smoothing: 2
+  RotationJoystick: {fileID: 1570833640}
 --- !u!43 &966226187
 Mesh:
   m_ObjectHideFlags: 0
@@ -5095,27 +5104,13 @@ GameObject:
   - component: {fileID: 1198821959}
   - component: {fileID: 1198821958}
   - component: {fileID: 1198821957}
-  - component: {fileID: 1198821956}
   m_Layer: 9
   m_Name: Player2Test
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1198821956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1198821955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3a86ff4dab97c44bb0992a0fd70415, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
+  m_IsActive: 0
 --- !u!54 &1198821957
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5214,7 +5209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1605939441684070, guid: ce5089f3caa5bb042a4d4c23a427bc82, type: 3}
       propertyPath: m_Name
-      value: Fixed Joystick
+      value: Fixed Joystick_movement
       objectReference: {fileID: 0}
     - target: {fileID: 224070147403872398, guid: ce5089f3caa5bb042a4d4c23a427bc82,
         type: 3}
@@ -5338,7 +5333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1605939441684070, guid: ce5089f3caa5bb042a4d4c23a427bc82, type: 3}
       propertyPath: m_Name
-      value: Fixed Joystick (1)
+      value: Fixed Joystick_rotation
       objectReference: {fileID: 0}
     - target: {fileID: 224070147403872398, guid: ce5089f3caa5bb042a4d4c23a427bc82,
         type: 3}
@@ -5647,6 +5642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  MovementJoystick: {fileID: 524179760}
 --- !u!136 &1383597311
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5911,6 +5907,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4154021153174908, guid: 1d3e21374171a4335a8a51ecb8bf2d17,
     type: 3}
   m_PrefabInstance: {fileID: 1566321846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1570833640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1605939441684070, guid: ce5089f3caa5bb042a4d4c23a427bc82,
+    type: 3}
+  m_PrefabInstance: {fileID: 1278068324}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1580096214
 GameObject:
@@ -6564,7 +6566,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1886
+  m_Name: pb_Mesh-2044
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

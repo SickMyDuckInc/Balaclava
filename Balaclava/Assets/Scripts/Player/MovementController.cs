@@ -2,12 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour {
+public class MovementController : MonoBehaviour
+{
+
     public float speed = 10.0f;
+    public GameObject MovementJoystick;
+    
     float translation;
     float straffe;
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
+        //Prueba para canvas en moviles
+        if (Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            MovementJoystick.SetActive(false);
+        }
+        else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            MovementJoystick.SetActive(true);
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	
