@@ -783,16 +783,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4384170861061651352}
     m_Modifications:
-    - target: {fileID: 4372279949811874564, guid: be544e91ffe9689439154b55e47cf7ae,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4372279949811874565, guid: be544e91ffe9689439154b55e47cf7ae,
-        type: 3}
-      propertyPath: m_Name
-      value: CameraVision
-      objectReference: {fileID: 0}
     - target: {fileID: 4372279949811874584, guid: be544e91ffe9689439154b55e47cf7ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -862,6 +852,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372279949811874565, guid: be544e91ffe9689439154b55e47cf7ae,
+        type: 3}
+      propertyPath: m_Name
+      value: CameraVision
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372279949811874564, guid: be544e91ffe9689439154b55e47cf7ae,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4372279949811874585, guid: be544e91ffe9689439154b55e47cf7ae,
         type: 3}

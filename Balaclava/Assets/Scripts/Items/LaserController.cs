@@ -5,15 +5,19 @@ using UnityEngine;
 public class LaserController : MonoBehaviour
 {
     public float time = 3;
+
     public GameObject lightA;
     public GameObject lightB;
+
     public Material lightOn;
     public Material lightOff;
 
     private bool triggerA;
     private bool triggerB;
+
     private Material materialA;
     private Material materialB;
+
     private bool laserIsActive;
 
     private IEnumerator coroutine;
@@ -47,19 +51,19 @@ public class LaserController : MonoBehaviour
             triggerB = RandomBoolean();
             if (triggerA)
             {
-                materialA = lightOn;
+                lightA.GetComponent<Renderer>().material = lightOn;
             }
             else
             {
-                materialA = lightOff;
+                lightA.GetComponent<Renderer>().material = lightOff;
             }
             if (triggerB)
             {
-                materialB = lightOn;
+                lightB.GetComponent<Renderer>().material = lightOn;
             }
             else
             {
-                materialB = lightOff;
+                lightB.GetComponent<Renderer>().material = lightOff;
             }
             if(triggerA && triggerB)
             {
@@ -94,7 +98,7 @@ public class LaserController : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-
+                CountDown.cd.ActivatePoliceTime();
             }
         } 
     }

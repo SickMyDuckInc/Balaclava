@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 3
-  lightA: {fileID: 0}
-  lightB: {fileID: 0}
-  lightOn: {fileID: 0}
-  lightOff: {fileID: 0}
+  lightA: {fileID: 5280033515942013903}
+  lightB: {fileID: 5280033515847459260}
+  lightOn: {fileID: 2100000, guid: 9a6024a0374e47c4eb3c432a4651aeee, type: 2}
+  lightOff: {fileID: 2100000, guid: a5be9602f132d644abd0a90df7c269b8, type: 2}
