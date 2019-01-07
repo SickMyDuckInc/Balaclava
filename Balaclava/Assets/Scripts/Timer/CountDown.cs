@@ -104,6 +104,6 @@ public class CountDown : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("JUEGO TERMINADO");
+        //Debug.Log("JUEGO TERMINADO");
     }
 }

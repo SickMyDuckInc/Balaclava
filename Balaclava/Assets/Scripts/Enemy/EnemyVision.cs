@@ -5,43 +5,40 @@ using UnityEngine.AI;
 
 public class EnemyVision : MonoBehaviour
 {
-    private NavMeshAgent agent;
-    [HideInInspector]
-    public NavMeshObstacle obstacle;
     //my position
-    private Transform enemyPosition;
+    public Transform securityGuardPosition;
 
     Vector3 playerDirection;
     RaycastHit hit;
 
-    [HideInInspector]
-    public bool enabledObstacle;
-    //min distance to enable obstacle navmesh and avoid collision between enemies
-    private float minDistance = 10f;
     //player visible
     private bool isPlayerVisible;
+    //max distance of RayCast
+    float maxDistance;
+    //layer mask
+    int layerMask;
 
     private void Start()
     {
-        agent = GetComponentInParent<NavMeshAgent>();
-        obstacle = GetComponentInParent<NavMeshObstacle>();
-        obstacle.enabled = false;
-        enabledObstacle = false;
-        enemyPosition = transform.parent;
         isPlayerVisible = false;
+        maxDistance = GetComponent<BoxCollider>().size.z;
+        layerMask = LayerMask.GetMask("Water");
+        layerMask = ~layerMask;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player") && !enabledObstacle)
+        if (other.gameObject.tag.Equals("Player"))
         {
             Debug.Log("Player detected");
-            playerDirection = other.gameObject.transform.position - enemyPosition.position;
-            if (Physics.Raycast(enemyPosition.position, playerDirection, out hit))
+            playerDirection = other.gameObject.transform.position - securityGuardPosition.position;
+            Physics.Raycast(securityGuardPosition.position, playerDirection, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore);
+            if (Physics.Raycast(securityGuardPosition.position, playerDirection, out hit))
             {
                 if (hit.collider.gameObject.tag.Equals("Player"))
                 {
                     other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+                    Debug.Log("VEO AL JUGADOR");
                     isPlayerVisible = true;
                 }
             }
@@ -55,64 +52,24 @@ public class EnemyVision : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        /*
-         enable obstacle to avoid other enemies collision and later enable agent again 
-         */
-        if (other.gameObject.tag.Equals("Enemy"))
-        {
-            if(Vector3.Distance(enemyPosition.position, other.gameObject.transform.position) < minDistance)
-            {
-                if (!other.gameObject.GetComponentInChildren<EnemyVision>().enabledObstacle && !enabledObstacle)
-                {
-                    //Debug.Log(gameObject.name + " :obstacle enabled");
-                    agent.isStopped = true;
-                    obstacle.enabled = true;
-                    obstacle.carveOnlyStationary = true;
-                    enabledObstacle = true;
-                }
-
-            }
-        }
-
-        if (other.gameObject.tag.Equals("Player") && !enabledObstacle)
+        if (other.gameObject.tag.Equals("Player"))
         {
             //Debug.Log("Player detected");
-            playerDirection = other.gameObject.transform.position - enemyPosition.position;
-            if (Physics.Raycast(enemyPosition.position, playerDirection, out hit))
+            playerDirection = other.gameObject.transform.position - securityGuardPosition.position;
+            if (Physics.Raycast(securityGuardPosition.position, playerDirection, out hit))
             {
                 if (hit.collider.gameObject.tag.Equals("Player"))
                 {
+                    Debug.Log("VEO AL JUGADOR");
                     other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
                     isPlayerVisible = true;
                 }
-                else
-                {
-                    if (!isPlayerVisible)
-                        isPlayerVisible = false;
-                }
+            }
+            else
+            {
+                if (!isPlayerVisible)
+                    isPlayerVisible = false;
             }
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Enemy"))
-        {
-            if (enabledObstacle)
-            {
-               // Debug.Log(gameObject.name + " :obstacle Disabled");
-                obstacle.carveOnlyStationary = false;
-                obstacle.enabled = false;
-                agent.isStopped = false;
-                enabledObstacle = false;
-            }           
-        }
-
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            //Debug.Log("exit player");
-            other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
-        }
-    }
-  
+    } 
 }
