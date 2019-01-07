@@ -11,7 +11,7 @@ public class EnemyController : Enemy
     {
         anim = GetComponent<Animator>();
         waypoints = new List<Transform>(WaypointsManager.wp.waypoints.Count);
-        waypoints = WaypointsManager.wp.GetSceneWaypoints();
+        waypoints = WaypointsManager.wp.GetSceneWaypoints(enemyIndex);
         waypointIndex = Random.Range(0 , waypoints.Count);
         target = waypoints[waypointIndex];
         agent.SetDestination(target.position);
