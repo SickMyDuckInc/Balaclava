@@ -9,8 +9,9 @@ public class LockController : MonoBehaviour
     private int oldMovement = 0;
     private int movement = 0;
     private int numberSelected;
+    public float divider;
 
-    public int[] keyNumber;
+    public int[] keyNumber = new int[4];
     private int index;
     // Start is called before the first frame update
     void Start()
@@ -24,44 +25,66 @@ public class LockController : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            transform.Rotate(new Vector3(-Input.GetAxis("Mouse X"), 0, 0) * Time.deltaTime * speed);
-            Debug.Log(Input.GetAxis("Mouse X"));
+            //transform.eulerAngles = transform.eulerAngles + new Vector3(-Input.GetAxis("Mouse X"), 0, 0) * Time.deltaTime * speed;
+            transform.Rotate(new Vector3(0, 0, -Input.GetAxis("Mouse X")) * Time.deltaTime * speed,Space.Self);
+            //Debug.Log(transform.eulerAngles);
             select = false;
-            if(- Input.GetAxis("Mouse X") > 0)
+            if(- Input.GetAxis("Mouse X") > 0.1)
             {
                 movement = 1;
+                if(oldMovement == 1)
+                {
+                    index = 0;
+                    oldMovement = 0;
+                    Debug.Log("Se resetea");
+                }
             }
-            else if(-Input.GetAxis("Mouse X") < 0)
+            else if(-Input.GetAxis("Mouse X") < -0.1)
             {
                 movement = 2;
+                if(oldMovement == 2)
+                {
+                    index = 0;
+                    oldMovement = 0;
+                    Debug.Log("Se resetea");
+                }
             }
         }
-        else
+        else if(Input.GetMouseButtonUp(0))
         {
             select = true;
 
             if(movement == oldMovement)
             {
+                Debug.Log("Vas en el mismo sentido, se resetea la cuenta");
                 index = 0;
             }
-            float rotation = transform.rotation.eulerAngles.x;
+            float rotation = transform.rotation.eulerAngles.z;
+            
+            int number = (int)Mathf.Round((rotation) / (divider));
 
-            int number = (int)Mathf.Round((rotation) / (3.6f));
-
-            if (number == 100)
+            if (number == (int)Mathf.Round(360/ divider))
             {
                 number = 0;
             }
 
-            if (index < keyNumber.Length && number == keyNumber[index])
+            if (index < keyNumber.Length)
             {
-                Debug.Log("Número correcto");
-                index++;
+                if(number == keyNumber[index])
+                {
+                    Debug.Log("Número correcto");
+                    index++;
+                }
+                else
+                {
+                    Debug.Log("Número incorrecto, comienza de nuevo");
+                    index = 0;
+                }                
             }
-            else
+            
+            if(index > keyNumber.Length)
             {
-                Debug.Log("Número incorrecto, comienza de nuevo");
-                index = 0;
+                Debug.Log("Has ganado");
             }
             oldMovement = movement;
 
