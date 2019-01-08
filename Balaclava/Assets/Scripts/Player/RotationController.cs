@@ -11,11 +11,12 @@ public class RotationController : MonoBehaviour {
     private bool enableRotation = true;
 
     GameObject character;
+    public GameObject Hands;
 
 	// Use this for initialization
 	void Start () {
         //Prueba para canvas en moviles
-        if (Application.platform == RuntimePlatform.WindowsEditor ||  Application.platform == RuntimePlatform.WindowsPlayer)
+        if (SystemInfo.deviceType != DeviceType.Handheld)
         {
             Debug.Log("Entro en windowsPlayer");
         }
@@ -50,10 +51,12 @@ public class RotationController : MonoBehaviour {
     public void DisableRotation()
     {
         enableRotation = false;
+        Hands.SetActive(false);
     }
 
     public void EnableRotation()
     {
         enableRotation = true;
+        Hands.SetActive(true);
     }
 }

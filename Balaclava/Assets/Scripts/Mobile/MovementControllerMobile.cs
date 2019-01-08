@@ -12,18 +12,18 @@ public class MovementControllerMobile : MonoBehaviour {
 
     private void Start()
     {
-        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        if (SystemInfo.deviceType != DeviceType.Handheld)
+        {
+            RotationJoystick.SetActive(false);
+            MovementJoystick.SetActive(false);
+            this.enabled = false;
+        }
+        else
         {
             Debug.Log("Entro en Android, IphonePlayer");
             RotationJoystick.SetActive(true);
             MovementJoystick.SetActive(true);
             //Screen.orientation = ScreenOrientation.LandscapeLeft;
-        }
-        else
-        {
-            RotationJoystick.SetActive(false);
-            MovementJoystick.SetActive(false);
-            this.enabled = false;
         }
     }
 

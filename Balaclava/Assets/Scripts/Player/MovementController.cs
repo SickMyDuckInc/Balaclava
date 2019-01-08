@@ -16,7 +16,7 @@ public class MovementController : MonoBehaviour
     void Start () {
 
         //Prueba para canvas en moviles
-        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+        if (SystemInfo.deviceType != DeviceType.Handheld)
         {
             Debug.Log("Entro en windowsPlayer");
         }
