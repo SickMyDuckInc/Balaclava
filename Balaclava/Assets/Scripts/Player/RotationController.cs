@@ -12,6 +12,7 @@ public class RotationController : MonoBehaviour {
 
     GameObject character;
     public GameObject Hands;
+    private GameObject handSelected;
 
 	// Use this for initialization
 	void Start () {
@@ -48,15 +49,17 @@ public class RotationController : MonoBehaviour {
         } 
 	}
 
-    public void DisableRotation()
+    public void DisableRotation(GameObject handSelected)
     {
         enableRotation = false;
         Hands.SetActive(false);
+        this.handSelected = handSelected;
     }
 
     public void EnableRotation()
     {
         enableRotation = true;
         Hands.SetActive(true);
+        Hands.GetComponent<SelectorController>().ReturnControl(handSelected);
     }
 }
