@@ -11,6 +11,8 @@ public class MovementController : MonoBehaviour
     float translation;
     float straffe;
 
+    private bool enableMovement = true;
+
 
     // Use this for initialization
     void Start () {
@@ -29,16 +31,30 @@ public class MovementController : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        translation = Input.GetAxis("Vertical") * speed;
-        straffe = Input.GetAxis("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
+        if (enableMovement)
+        {
+            translation = Input.GetAxis("Vertical") * speed;
+            straffe = Input.GetAxis("Horizontal") * speed;
+            translation *= Time.deltaTime;
+            straffe *= Time.deltaTime;
 
-        transform.Translate(straffe, 0, translation);
+            transform.Translate(straffe, 0, translation);
 
+            
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
         }
-	}
+    }
+    public void EnableMovement()
+    {
+        enableMovement = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void DisableMovement()
+    {
+        enableMovement = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }

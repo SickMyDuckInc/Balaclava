@@ -9,6 +9,7 @@ public class SelectorController : MonoBehaviour
     bool selectable = false;
     public GameObject player;
     public GameObject camera;
+    private GameObject selectedObject;
 
     private bool test = false;
 
@@ -25,6 +26,7 @@ public class SelectorController : MonoBehaviour
             oldMaterial = other.gameObject.GetComponent<MeshRenderer>().material;
             other.gameObject.GetComponent<MeshRenderer>().material = iluminated;
             selectable = true;
+            selectedObject = other.gameObject;
         }
         
     }
@@ -47,8 +49,9 @@ public class SelectorController : MonoBehaviour
             
             player.transform.position = new Vector3(5.76f, 0.56f, 3f);
             camera.GetComponent<RotationController>().DisableRotation();
-            player.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            camera.transform.rotation = Quaternion.Euler(34f,0f,0f);
+            player.GetComponent<MovementController>().DisableMovement();
+            player.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerPosition);
+            camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
             Debug.Log(player.transform.rotation.ToString());
         }
         if (test)
