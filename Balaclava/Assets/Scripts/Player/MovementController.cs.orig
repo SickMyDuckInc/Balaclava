@@ -10,13 +10,17 @@ public class MovementController : MonoBehaviour
     float translation;
     float straffe;
 
+<<<<<<< HEAD
     private bool enableMovement = true;
 
+
+=======
+>>>>>>> 194a63aa7115dc5c4c5694d72ee46e83d9e73efd
     // Use this for initialization
     void Start () {
 
         //Prueba para canvas en moviles
-        if (SystemInfo.deviceType != DeviceType.Handheld)
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
         {
             Debug.Log("Entro en windowsPlayer");
         }
@@ -29,17 +33,28 @@ public class MovementController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {      
+<<<<<<< HEAD
+	void Update () {
         if (enableMovement)
         {
             translation = Input.GetAxis("Vertical") * speed;
             straffe = Input.GetAxis("Horizontal") * speed;
+=======
+	void Update () {      
 
+            //not isDevice inputs
+            translation = Input.GetAxis("Vertical") * speed;
+            straffe = Input.GetAxis("Horizontal") * speed;
+
+>>>>>>> 194a63aa7115dc5c4c5694d72ee46e83d9e73efd
             translation *= Time.deltaTime;
             straffe *= Time.deltaTime;
 
             transform.Translate(straffe, 0, translation);
+<<<<<<< HEAD
+=======
            
+>>>>>>> 194a63aa7115dc5c4c5694d72ee46e83d9e73efd
 
             
         }

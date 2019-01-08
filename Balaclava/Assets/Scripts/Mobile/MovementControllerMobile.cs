@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class MovementControllerMobile : MonoBehaviour {
 
@@ -17,12 +16,14 @@ public class MovementControllerMobile : MonoBehaviour {
         {
             RotationJoystick.SetActive(false);
             MovementJoystick.SetActive(false);
-            this.enabled = false;          
+            this.enabled = false;
         }
         else
         {
             Debug.Log("Entro en Android, IphonePlayer");
-            Screen.orientation = ScreenOrientation.LandscapeLeft;
+            RotationJoystick.SetActive(true);
+            MovementJoystick.SetActive(true);
+            //Screen.orientation = ScreenOrientation.LandscapeLeft;
         }
     }
 

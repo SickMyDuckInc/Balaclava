@@ -11,6 +11,7 @@ public class RotationController : MonoBehaviour {
     private bool enableRotation = true;
 
     GameObject character;
+    public GameObject Hands;
 
 	// Use this for initialization
 	void Start () {
@@ -50,10 +51,12 @@ public class RotationController : MonoBehaviour {
     public void DisableRotation()
     {
         enableRotation = false;
+        Hands.SetActive(false);
     }
 
     public void EnableRotation()
     {
         enableRotation = true;
+        Hands.SetActive(true);
     }
 }
