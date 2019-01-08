@@ -5,10 +5,8 @@ using UnityEngine;
 public class LockController : MonoBehaviour
 {
     private float speed = 100.0f;
-    private bool select = false;
     private int oldMovement = 0;
     private int movement = 0;
-    private int numberSelected;
     public float divider;
 
     public int[] keyNumber = new int[4];
@@ -16,7 +14,6 @@ public class LockController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        numberSelected = 0;
         index = 0;
     }
 
@@ -28,7 +25,6 @@ public class LockController : MonoBehaviour
             //transform.eulerAngles = transform.eulerAngles + new Vector3(-Input.GetAxis("Mouse X"), 0, 0) * Time.deltaTime * speed;
             transform.Rotate(new Vector3(0, 0, -Input.GetAxis("Mouse X")) * Time.deltaTime * speed,Space.Self);
             //Debug.Log(transform.eulerAngles);
-            select = false;
             if(- Input.GetAxis("Mouse X") > 0.1)
             {
                 movement = 1;
@@ -52,7 +48,6 @@ public class LockController : MonoBehaviour
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            select = true;
 
             if(movement == oldMovement)
             {

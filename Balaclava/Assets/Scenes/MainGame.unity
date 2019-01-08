@@ -6009,7 +6009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1971673600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6324,7 +6324,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2822
+  m_Name: pb_Mesh-2088
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6489,6 +6489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652872946193406328, guid: ef00e2fadecf7544d929dbd526eb7b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300754006634551427, guid: ef00e2fadecf7544d929dbd526eb7b5b,
         type: 3}
@@ -6711,6 +6716,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Caja Fuerte
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405490930641723691, guid: e51bc4818cc0763499c670e089a73142,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5405490930641723686, guid: e51bc4818cc0763499c670e089a73142,
         type: 3}

@@ -15,9 +15,6 @@ public class LaserController : MonoBehaviour
     private bool triggerA;
     private bool triggerB;
 
-    private Material materialA;
-    private Material materialB;
-
     private bool laserIsActive;
 
     private IEnumerator coroutine;
@@ -27,9 +24,6 @@ public class LaserController : MonoBehaviour
         laserIsActive = true;
         triggerA = false;
         triggerB = false;
-
-        materialA =  lightA.GetComponent<Renderer>().material;
-        materialB = lightB.GetComponent<Renderer>().material;
 
         coroutine = WaitAndPrint(time);
         StartCoroutine(coroutine);

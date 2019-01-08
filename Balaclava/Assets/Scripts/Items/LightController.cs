@@ -10,7 +10,6 @@ public class LightController : MonoBehaviour
     private Material[] colorsMaterialOff = new Material[3];
 
     public int []key = new int[4];
-    private float[] keyTime = new float[4];
     private List<string[]> blink = new List<string[]>()
     {
         new string[]{"red","yellow","blue"},
@@ -31,7 +30,6 @@ public class LightController : MonoBehaviour
     public float timeBetweenBlink = 0.2f;
     public float timeFinish = 2;
 
-    private float timeSequence;
     private IEnumerator coroutine;
 
     // Start is called before the first frame update
@@ -40,16 +38,6 @@ public class LightController : MonoBehaviour
         colorsMaterialOff[0] = colors[0].GetComponent<Renderer>().material;
         colorsMaterialOff[1] = colors[1].GetComponent<Renderer>().material;
         colorsMaterialOff[2] = colors[2].GetComponent<Renderer>().material;
-
-        //Contar tiempo que dura la secuencia
-        timeSequence = 0;
-        int numberBlinks = 0;
-        //Cuantos parpadeos debemos hacer
-        for(int i = 0; i< key.Length; i++)
-        {
-            numberBlinks += blink[key[i]].Length;
-        }
-        timeSequence = numberBlinks * timeBlink + (numberBlinks - 1) * timeBetweenDigit + timeFinish;
 
 
         coroutine = WaitSequence();

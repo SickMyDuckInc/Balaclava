@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 6532958376314461298}
   - component: {fileID: 6532958376314461299}
   - component: {fileID: 6532958376314461300}
-  - component: {fileID: 6532958376314461301}
-  - component: {fileID: 6532958376314461296}
+  - component: {fileID: 898042949}
   m_Layer: 0
   m_Name: CajaFuerteColores
-  m_TagString: Untagged
+  m_TagString: SelectableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +93,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6532958376314461301
+--- !u!114 &898042949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,38 +102,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6532958376314461302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd32796bc4937774f93307b7312e88c5, type: 3}
+  m_Script: {fileID: 11500000, guid: c1a2562aa8dac254397383d0d6720248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
-  parent: {fileID: 0}
-  selected: {fileID: 2100000, guid: 9a6024a0374e47c4eb3c432a4651aeee, type: 2}
-  time: 1
---- !u!114 &6532958376314461296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532958376314461302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07d6d318e80bc1d4ab40f720e4de08a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  colorsMaterialOn:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  key: 00000000000000000000000000000000
-  timeBlink: 0.5
-  timeBetweenDigit: 1
-  timeBetweenBlink: 0.2
-  timeFinish: 2
+  playerPosition: {x: 39.1, y: 1.489, z: 5}
+  playerRotation: {x: 5, y: 0, z: 0}
 --- !u!1001 &7379564438714763817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377711891912534705, guid: a8ba1fe444991e4439d00c2530b15824,
+        type: 3}
+      propertyPath: key
+      value: 9078
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ba1fe444991e4439d00c2530b15824, type: 3}
