@@ -1,0 +1,76 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovementController : MonoBehaviour
+{
+
+    public float speed = 10.0f;
+    
+    float translation;
+    float straffe;
+
+<<<<<<< HEAD
+    private bool enableMovement = true;
+
+
+=======
+>>>>>>> 194a63aa7115dc5c4c5694d72ee46e83d9e73efd
+    // Use this for initialization
+    void Start () {
+
+        //Prueba para canvas en moviles
+        if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            Debug.Log("Entro en windowsPlayer");
+        }
+        else
+        {
+            Debug.Log("Entro en Android, IphonePlayer");
+            this.enabled = false;
+        }
+        Cursor.lockState = CursorLockMode.Locked;
+	}
+	
+	// Update is called once per frame
+<<<<<<< HEAD
+	void Update () {
+        if (enableMovement)
+        {
+            translation = Input.GetAxis("Vertical") * speed;
+            straffe = Input.GetAxis("Horizontal") * speed;
+=======
+	void Update () {      
+
+            //not isDevice inputs
+            translation = Input.GetAxis("Vertical") * speed;
+            straffe = Input.GetAxis("Horizontal") * speed;
+
+>>>>>>> 194a63aa7115dc5c4c5694d72ee46e83d9e73efd
+            translation *= Time.deltaTime;
+            straffe *= Time.deltaTime;
+
+            transform.Translate(straffe, 0, translation);
+<<<<<<< HEAD
+=======
+           
+>>>>>>> 194a63aa7115dc5c4c5694d72ee46e83d9e73efd
+
+            
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+    public void EnableMovement()
+    {
+        enableMovement = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    public void DisableMovement()
+    {
+        enableMovement = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
+}

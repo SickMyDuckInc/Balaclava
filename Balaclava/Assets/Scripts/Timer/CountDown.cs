@@ -92,18 +92,21 @@ public class CountDown : MonoBehaviour
 
     public void ActivatePoliceTime()
     {
-        int minutes = (int)(gameTimer / 60) % 60;
-        int seconds = (int)(gameTimer % 60);
-        if(minutes >= 1 && seconds > 30)
+        if (!callPolice)
         {
-            gameTimer = 90f;
-        }
-        Debug.Log("Llamamos a la policia");
-        callPolice = true;
+            int minutes = (int)(gameTimer / 60) % 60;
+            int seconds = (int)(gameTimer % 60);
+            if (minutes >= 1 && seconds > 30)
+            {
+                gameTimer = 90f;
+            }
+            Debug.Log("Llamamos a la policia");
+            callPolice = true;
+        }        
     }
 
     private void GameOver()
     {
-        Debug.Log("JUEGO TERMINADO");
+        //Debug.Log("JUEGO TERMINADO");
     }
 }

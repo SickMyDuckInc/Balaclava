@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Point
+{
+    public List<Transform> list;
+}
+
 public class WaypointsManager : MonoBehaviour
 {
     public static WaypointsManager wp = null;
 
     [Header("Scene Waypoints")]
-    public List<Transform> waypoints;
+    public List<Point> waypoints;
 
 
     // Start is called before the first frame update
@@ -16,8 +22,8 @@ public class WaypointsManager : MonoBehaviour
         wp = this;
     }
 
-    public List<Transform> GetSceneWaypoints()
+    public List<Transform> GetSceneWaypoints(int enemyIndex)
     {
-        return waypoints;
+        return waypoints[enemyIndex].list;
     }
 }

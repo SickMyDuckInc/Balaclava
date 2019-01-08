@@ -148,6 +148,7 @@ ModelImporter:
     4300036: rifle
     4300038: doughnut
     9500000: //RootNode
+    11100000: //RootNode
     13700000: male_torso_cop
   externalObjects:
   - first:
@@ -232,19 +233,19 @@ ModelImporter:
     - boneName: leftLeg1_LoResUpperLeg
       humanName: LeftUpperLeg
       limit:
-        min: {x: -60, y: -60, z: -65}
-        max: {x: 60, y: 60, z: 50}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: rightLeg1_LoResUpperLeg
       humanName: RightUpperLeg
       limit:
-        min: {x: -60, y: -60, z: -65}
-        max: {x: 60, y: 60, z: 50}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: leftLeg1_LoResLowerLeg
       humanName: LeftLowerLeg
       limit:
@@ -304,23 +305,23 @@ ModelImporter:
     - boneName: leftArm1_LoResUpperArm
       humanName: LeftUpperArm
       limit:
-        min: {x: -70, y: -40, z: -40}
-        max: {x: 90, y: 80, z: 65}
+        min: {x: -80, y: -40, z: -40}
+        max: {x: 90, y: 100, z: 100}
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 1
     - boneName: rightArm1_LoResUpperArm
       humanName: RightUpperArm
       limit:
-        min: {x: -70, y: -40, z: -40}
-        max: {x: 90, y: 80, z: 65}
+        min: {x: -80, y: -40, z: -40}
+        max: {x: 90, y: 100, z: 100}
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 1
     - boneName: leftArm1_LoResLowerArm
       humanName: LeftLowerArm
       limit:
-        min: {x: -90, y: 0, z: -30}
+        min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: 0, y: 0, z: 0}
         length: 0
@@ -328,27 +329,27 @@ ModelImporter:
     - boneName: rightArm1_LoResLowerArm
       humanName: RightLowerArm
       limit:
-        min: {x: -90, y: 0, z: -30}
-        max: {x: 90, y: 0, z: 80}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: leftArm1_LoResHand
       humanName: LeftHand
       limit:
-        min: {x: 0, y: -60, z: -80}
-        max: {x: 0, y: 50, z: 80}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: rightArm1_LoResHand
       humanName: RightHand
       limit:
-        min: {x: 0, y: -60, z: -80}
-        max: {x: 0, y: 50, z: 80}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     skeleton:
     - name: cop(Clone)
       parentName: 
