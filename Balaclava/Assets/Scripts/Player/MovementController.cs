@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public static string DEFAULT_OPERATING_SYSTEM = "windows";
 
     public float speed = 10.0f;
     
@@ -15,8 +16,10 @@ public class MovementController : MonoBehaviour
     // Use this for initialization
     void Start () {
 
+        string operatingSystem = SystemInfo.operatingSystem;
+
         //Prueba para canvas en moviles
-        if (SystemInfo.deviceType != DeviceType.Handheld)
+        if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM))
         {
             Debug.Log("Entro en windowsPlayer");
         }
@@ -29,7 +32,9 @@ public class MovementController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {      
+	void Update () {
+        Debug.DrawLine(this.transform.position, this.transform.forward * 10);
+
         if (enableMovement)
         {
             translation = Input.GetAxis("Vertical") * speed;
@@ -39,15 +44,14 @@ public class MovementController : MonoBehaviour
             straffe *= Time.deltaTime;
 
             transform.Translate(straffe, 0, translation);
-           
-
-            
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
         }
     }
+
     public void EnableMovement()
     {
         enableMovement = true;
