@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - SelectableObject
+  - DoorObject
   layers:
   - Default
   - TransparentFX

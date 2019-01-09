@@ -19,7 +19,7 @@ public class MovementControllerMobile : PlayerController {
         Cursor.lockState = CursorLockMode.None;
     }
 
-    void Update () 
+    void FixedUpdate () 
 	{
         if (enableMovement)
         {
