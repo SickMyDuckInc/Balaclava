@@ -28,8 +28,8 @@ public class SelectorController : MonoBehaviour
             MeshRenderer mesh = other.gameObject.GetComponent<MeshRenderer>();
             oldMaterial = mesh.material;
             mesh.material = iluminated;
-            /*selectable = true;
-            selectedObject = other.gameObject;*/
+            selectable = true;
+            selectedObject = other.gameObject;
         }
         
     }
