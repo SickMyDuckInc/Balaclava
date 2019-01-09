@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnerPlayer : MonoBehaviour
 {
+    public static bool ISDEVICE;
+
     protected string DEFAULT_OPERATING_SYSTEM_ANDROID = "android";
     protected string DEFAULT_OPERATING_SYSTEM_APPLE = "ios";
 
@@ -20,9 +22,10 @@ public class SpawnerPlayer : MonoBehaviour
 
         if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_ANDROID) || operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_APPLE))
         {
-            Debug.Log("SpawnPlayer movil en móvil");
+            Debug.Log("SpawnPlayer en móvil");
             MobilePlayerPrefab.SetActive(true);
             Destroy(WindowsPlayerPrefab);
+            ISDEVICE = true;
         }
         else
         {
@@ -31,7 +34,12 @@ public class SpawnerPlayer : MonoBehaviour
             RotationJoystick.SetActive(false);
             WindowsPlayerPrefab.SetActive(true);
             Destroy(MobilePlayerPrefab);
+            ISDEVICE = false;
         }
+
+        /*MobilePlayerPrefab.SetActive(true);
+        Destroy(WindowsPlayerPrefab);
+        ISDEVICE = true;*/
     }
 
 }

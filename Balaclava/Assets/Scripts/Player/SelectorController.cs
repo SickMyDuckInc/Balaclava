@@ -12,8 +12,12 @@ public class SelectorController : MonoBehaviour
     bool keySelected = false;
     public GameObject player;
     public GameObject camera;
+    //action button
+    public GameObject ActionButton;
+    public GameObject HelpText;
+
     private GameObject selectedObject;
-    private GameObject doorObject;
+
 
     private bool test = false;
 
@@ -23,6 +27,9 @@ public class SelectorController : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         if(camera == null)
             camera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -42,14 +49,6 @@ public class SelectorController : MonoBehaviour
             mesh.material = iluminated;
             selectedObject = other.gameObject;
         }
-        else if(other.gameObject.tag == "DoorObject")
-        {
-            //MeshRenderer mesh = other.gameObject.GetComponent<MeshRenderer>();
-            //oldMaterial = mesh.material;
-            //mesh.material = iluminated;
-            door = true;
-            doorObject = other.gameObject;
-        }
         
     }
 
@@ -61,20 +60,31 @@ public class SelectorController : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
             selectable = false;
         }
-        else if (other.gameObject.tag == "DoorObject")
+        if (SpawnerPlayer.ISDEVICE)
         {
-            //other.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
-            door = false;
+            ActionButton.SetActive(false);
+            HelpText.SetActive(false);
         }
     }
 
     private void Update()
     {
-        //Click izquierdo
-        if (Input.GetMouseButton(0) )
+        if (SpawnerPlayer.ISDEVICE)
         {
             if (selectable)
             {
+                if (!ActionButton.activeInHierarchy)
+                {
+                    ActionButton.SetActive(true);
+                }               
+            }
+        }
+        else
+        {
+            //Click izquierdo
+            if (Input.GetMouseButton(0) && selectable)
+            {
+
                 //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
 
                 player.GetComponent<MovementController>().DisableMovement();
@@ -94,6 +104,25 @@ public class SelectorController : MonoBehaviour
                 key = true;
                 Destroy(selectedObject);
                 key = false;
+            if (test)
+            {
+                //Debug.Log(player.transform.rotation.ToString());
+            }
+        }        
+    }
+
+    //Only when isDevice 
+    public void ButtonPressed()
+    {
+        player.GetComponent<PlayerController>().DisableMovement();
+        player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
+        camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
+        selectedObject.GetComponentInChildren<Panel>().EnablePanel();
+        player.GetComponent<PlayerController>().DisableRotation(selectedObject);
+
+        ActionButton.SetActive(false);
+        HelpText.SetActive(true);
+    }
             }
         }
         if (test)
@@ -110,5 +139,9 @@ public class SelectorController : MonoBehaviour
         selected.GetComponentInChildren<Panel>().DisablePanel();
         player.GetComponent<Rigidbody>().useGravity = true;
 
+        if (SpawnerPlayer.ISDEVICE)
+        {
+            HelpText.SetActive(false);
+        }
     }
 }

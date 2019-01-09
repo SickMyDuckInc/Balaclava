@@ -37,7 +37,16 @@ public class PanelController : Panel
                     Debug.Log("Exito");
                     //Abrir puerta o lo que sea
                     transform.parent.gameObject.tag = "Untagged";
-                    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerController>().EnableRotation();
+
+                    //Si no es un móvil
+                    if (!SpawnerPlayer.ISDEVICE)
+                    {
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerController>().EnableRotation();
+                    }
+                    else
+                    {
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().EnableRotation();
+                    }
                 }
                 else
                 {
