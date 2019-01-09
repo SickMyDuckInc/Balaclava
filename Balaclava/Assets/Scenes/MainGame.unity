@@ -5241,8 +5241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 197.4, y: 0}
-  m_SizeDelta: {x: -394.8, y: 0}
+  m_AnchoredPosition: {x: 325, y: 0}
+  m_SizeDelta: {x: -650, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990066960
 MonoBehaviour:
@@ -7735,6 +7735,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerMobile
       objectReference: {fileID: 0}
+    - target: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: ActionButton
+      value: 
+      objectReference: {fileID: 926978865}
+    - target: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: HelpText
+      value: 
+      objectReference: {fileID: 697403726}
     - target: {fileID: 6294540750510011301, guid: 00d1e4417c51121499e5946eb1a30845,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7810,16 +7820,6 @@ PrefabInstance:
       propertyPath: rotPanel
       value: 
       objectReference: {fileID: 990066960}
-    - target: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
-        type: 3}
-      propertyPath: ActionButton
-      value: 
-      objectReference: {fileID: 926978865}
-    - target: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
-        type: 3}
-      propertyPath: HelpText
-      value: 
-      objectReference: {fileID: 697403726}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d1e4417c51121499e5946eb1a30845, type: 3}
 --- !u!1001 &5280033516907248308
