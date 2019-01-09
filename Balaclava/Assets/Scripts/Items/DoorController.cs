@@ -19,7 +19,6 @@ public class DoorController : MonoBehaviour
         {
             transform.Rotate(Vector3.up * -Time.deltaTime*50);
             counter += Time.deltaTime*50;
-            Debug.Log(counter);
         }
         
     }
