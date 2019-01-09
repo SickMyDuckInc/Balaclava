@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class LockController : Panel
 {
-    private float speed = 100.0f;
+    private float speed = 50.0f;
     private int oldMovement = 0;
     private int movement = 0;
     public float divider;
+    int actualNumber = 0;
 
+    public List<AudioClip> badAudios;
+    public AudioClip goodAudio;
+
+    private AudioSource audioS;
     public int[] keyNumber = new int[4];
     private int index;
     // Start is called before the first frame update
     void Start()
     {
         index = 0;
+        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,11 +28,24 @@ public class LockController : Panel
     {
         if (panelActive)
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                actualNumber = Mathf.FloorToInt(transform.eulerAngles.z / divider);
+            }
             if (Input.GetMouseButton(0))
             {
                 //transform.eulerAngles = transform.eulerAngles + new Vector3(-Input.GetAxis("Mouse X"), 0, 0) * Time.deltaTime * speed;
                 transform.Rotate(new Vector3(0, 0, -Input.GetAxis("Mouse X")) * Time.deltaTime * speed, Space.Self);
-                //Debug.Log(transform.eulerAngles);
+                int actualAux = Mathf.FloorToInt(transform.eulerAngles.z / divider);
+                if (actualNumber != actualAux)
+                {
+                    int index = Random.Range(0, badAudios.Count);
+                    audioS.clip = badAudios[index];
+                    audioS.Play();
+                    
+                    print(actualNumber);
+                    actualNumber = actualAux;
+                }
                 if (-Input.GetAxis("Mouse X") > 0.1)
                 {
                     movement = 1;
