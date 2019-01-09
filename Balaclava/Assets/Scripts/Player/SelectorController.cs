@@ -54,6 +54,7 @@ public class SelectorController : MonoBehaviour
             
             player.GetComponent<MovementController>().DisableMovement();
             player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
+            player.GetComponent<Rigidbody>().useGravity = false;
             camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
             selectedObject.GetComponentInChildren<Panel>().EnablePanel();
             camera.GetComponent<RotationController>().DisableRotation(selectedObject);
@@ -71,5 +72,7 @@ public class SelectorController : MonoBehaviour
         player.GetComponent<MovementController>().EnableMovement();
 
         selected.GetComponentInChildren<Panel>().DisablePanel();
+        player.GetComponent<Rigidbody>().useGravity = true;
+
     }
 }
