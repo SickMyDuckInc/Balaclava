@@ -19,7 +19,7 @@ public abstract class Enemy : MonoBehaviour
     protected Transform target;
     protected int waypointIndex = 0;
 
-    protected List<Transform> waypoints;
+    protected Point waypoints;
 
     public NavMeshAgent agent;
     [Tooltip("Assign an index for every enemy from 0 to max enemies - 1 to assign routes in waypointmanager")]
