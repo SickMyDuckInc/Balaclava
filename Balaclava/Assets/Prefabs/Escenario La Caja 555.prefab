@@ -274,6 +274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6020694749657606915}
     m_Modifications:
+    - target: {fileID: 5280033516050434113, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
+        type: 3}
+      propertyPath: m_Name
+      value: Lasers (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5280033516050434126, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -338,11 +343,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.0360234
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280033516050434113, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
-        type: 3}
-      propertyPath: m_Name
-      value: Lasers (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5280033515942013896, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
         type: 3}
@@ -419,6 +419,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6020694749657606915}
     m_Modifications:
+    - target: {fileID: 1112818626, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
+      propertyPath: m_Name
+      value: Lasers2 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1112818631, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.86974335
@@ -474,10 +478,6 @@ PrefabInstance:
     - target: {fileID: 1112818631, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112818626, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
-      propertyPath: m_Name
-      value: Lasers2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1613605963, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
       propertyPath: m_LocalPosition.x
@@ -614,6 +614,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6020694749657606915}
     m_Modifications:
+    - target: {fileID: 1797711208016567233, guid: 4db39686293b34844b590204ecb0cfba,
+        type: 3}
+      propertyPath: m_Name
+      value: camerafija
+      objectReference: {fileID: 0}
     - target: {fileID: 7543061432829804814, guid: 4db39686293b34844b590204ecb0cfba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -683,11 +688,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1797711208016567233, guid: 4db39686293b34844b590204ecb0cfba,
-        type: 3}
-      propertyPath: m_Name
-      value: camerafija
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4db39686293b34844b590204ecb0cfba, type: 3}
