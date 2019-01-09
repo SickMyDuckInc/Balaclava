@@ -9,7 +9,12 @@ public class SelectorController : MonoBehaviour
     bool selectable = false;
     public GameObject player;
     public GameObject camera;
+    //action button
+    public GameObject ActionButton;
+    public GameObject HelpText;
+
     private GameObject selectedObject;
+
 
     private bool test = false;
 
@@ -19,6 +24,9 @@ public class SelectorController : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
         if(camera == null)
             camera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -42,34 +50,70 @@ public class SelectorController : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
             selectable = false;
         }
+        if (SpawnerPlayer.ISDEVICE)
+        {
+            ActionButton.SetActive(false);
+            HelpText.SetActive(false);
+        }
     }
 
     private void Update()
     {
-        //Click izquierdo
-        if (Input.GetMouseButton(0) && selectable)
+        if (SpawnerPlayer.ISDEVICE)
         {
-            
-            //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
-            
-            player.GetComponent<MovementController>().DisableMovement();
-            player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
-            camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
-            selectedObject.GetComponentInChildren<Panel>().EnablePanel();
-            camera.GetComponent<RotationController>().DisableRotation(selectedObject);
-            //Debug.Log(player.transform.rotation.ToString());
+            if (selectable)
+            {
+                if (!ActionButton.activeInHierarchy)
+                {
+                    ActionButton.SetActive(true);
+                }               
+            }
         }
-        if (test)
+        else
         {
-            //Debug.Log(player.transform.rotation.ToString());
-        }
+            //Click izquierdo
+            if (Input.GetMouseButton(0) && selectable)
+            {
+
+                //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
+
+                player.GetComponent<MovementController>().DisableMovement();
+                player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
+                camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
+                selectedObject.GetComponentInChildren<Panel>().EnablePanel();
+                camera.GetComponent<RotationController>().DisableRotation(selectedObject);
+                //Debug.Log(player.transform.rotation.ToString());
+            }
+            if (test)
+            {
+                //Debug.Log(player.transform.rotation.ToString());
+            }
+        }        
+    }
+
+    //Only when isDevice 
+    public void ButtonPressed()
+    {
+        player.GetComponent<PlayerController>().DisableMovement();
+        player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
+        camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
+        selectedObject.GetComponentInChildren<Panel>().EnablePanel();
+        player.GetComponent<PlayerController>().DisableRotation(selectedObject);
+
+        ActionButton.SetActive(false);
+        HelpText.SetActive(true);
     }
 
     public void ReturnControl(GameObject selected)
     {
         selectable = false;
-        player.GetComponent<MovementController>().EnableMovement();
+        player.GetComponent<PlayerController>().EnableMovement();
 
         selected.GetComponentInChildren<Panel>().DisablePanel();
+
+        if (SpawnerPlayer.ISDEVICE)
+        {
+            HelpText.SetActive(false);
+        }
     }
 }

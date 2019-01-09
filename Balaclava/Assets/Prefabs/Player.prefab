@@ -124,6 +124,8 @@ MonoBehaviour:
   iluminated: {fileID: 2100000, guid: 9a6024a0374e47c4eb3c432a4651aeee, type: 2}
   player: {fileID: 6632402486803555825}
   camera: {fileID: 6632402485243444332}
+  ActionButton: {fileID: 0}
+  HelpText: {fileID: 0}
 --- !u!1 &6632402485243444332
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6632402486803555342
 Transform:
   m_ObjectHideFlags: 0

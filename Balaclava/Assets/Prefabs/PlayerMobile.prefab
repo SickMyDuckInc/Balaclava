@@ -124,6 +124,8 @@ MonoBehaviour:
   iluminated: {fileID: 2100000, guid: 9a6024a0374e47c4eb3c432a4651aeee, type: 2}
   player: {fileID: 8813117107271939945}
   camera: {fileID: 8898967276914998113}
+  ActionButton: {fileID: 0}
+  HelpText: {fileID: 0}
 --- !u!1 &8813117107271939945
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6294540750510011301
 Transform:
   m_ObjectHideFlags: 0
@@ -247,12 +249,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17d77c119ec1804caa2a79686663b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
+  sensitivity: 8
   smoothing: 2
   moveSpeed: 8
   MovementJoystick: {fileID: 0}
   joystick: {fileID: 0}
-  pointer: {fileID: 0}
+  RotationPanel: {fileID: 0}
+  rotPanel: {fileID: 0}
+  Hands: {fileID: 1480056844109921688}
+  camera: {fileID: 8898967276914998113}
 --- !u!1 &8898967276914998113
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +269,6 @@ GameObject:
   - component: {fileID: 2234523736498781966}
   - component: {fileID: 6058271501433452741}
   - component: {fileID: 1162673791663284450}
-  - component: {fileID: 796205182269564881}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -337,20 +341,3 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8898967276914998113}
   m_Enabled: 1
---- !u!114 &796205182269564881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8898967276914998113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cbd1122c5b63484c8a804981368b075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensitivity: 5
-  smoothing: 2
-  RotationJoystick: {fileID: 0}
-  rotJoystick: {fileID: 0}
-  Hands: {fileID: 1480056844109921688}
