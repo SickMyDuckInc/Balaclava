@@ -14,7 +14,7 @@
 		"RenderType" = "Transparent" }
 		LOD 200
 
-		Cull Off
+		Cull off
 
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
