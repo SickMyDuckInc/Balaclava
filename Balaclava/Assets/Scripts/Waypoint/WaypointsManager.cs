@@ -6,10 +6,12 @@ using UnityEngine;
 public class Point
 {
     public List<Transform> list;
+    public List<bool> stopPoints;
 }
 
 public class WaypointsManager : MonoBehaviour
 {
+    //Singleton
     public static WaypointsManager wp = null;
 
     [Header("Scene Waypoints")]
@@ -22,8 +24,8 @@ public class WaypointsManager : MonoBehaviour
         wp = this;
     }
 
-    public List<Transform> GetSceneWaypoints(int enemyIndex)
+    public Point GetSceneWaypoints(int enemyIndex)
     {
-        return waypoints[enemyIndex].list;
+        return waypoints[enemyIndex];
     }
 }

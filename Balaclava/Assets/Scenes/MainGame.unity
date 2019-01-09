@@ -120,11 +120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1797711208016567233, guid: 4db39686293b34844b590204ecb0cfba,
-        type: 3}
-      propertyPath: m_Name
-      value: camerafija (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7543061432829804814, guid: 4db39686293b34844b590204ecb0cfba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -194,6 +189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797711208016567233, guid: 4db39686293b34844b590204ecb0cfba,
+        type: 3}
+      propertyPath: m_Name
+      value: camerafija (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4db39686293b34844b590204ecb0cfba, type: 3}
@@ -5049,7 +5049,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27042
+  m_Name: pb_Mesh-11372
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6172,14 +6172,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1112818626, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
-      propertyPath: m_Name
-      value: Lasers2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1112818626, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1112818631, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.8591976
@@ -6222,6 +6214,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112818631, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112818626, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
+      propertyPath: m_Name
+      value: Lasers2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112818626, guid: 72f3873fbed4cc0409fb3a70aec7a166, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6344,15 +6344,18 @@ MonoBehaviour:
     - {fileID: 331113018}
     - {fileID: 570495247}
     - {fileID: 1973443770}
+    stopPoints: 00010000
   - list:
     - {fileID: 1973443770}
     - {fileID: 1075959480}
     - {fileID: 1583658591}
     - {fileID: 252974374}
+    stopPoints: 01000001
   - list:
     - {fileID: 526834253}
     - {fileID: 1948476422}
     - {fileID: 1973443770}
+    stopPoints: 010101
 --- !u!1 &1881460257
 GameObject:
   m_ObjectHideFlags: 0
@@ -6793,7 +6796,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2364
+  m_Name: pb_Mesh-10962
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7270,16 +7273,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5280033516050434113, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
-        type: 3}
-      propertyPath: m_Name
-      value: Lasers
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280033516050434113, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5280033516050434126, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7333,6 +7326,16 @@ PrefabInstance:
     - target: {fileID: 5280033516050434126, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280033516050434113, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
+        type: 3}
+      propertyPath: m_Name
+      value: Lasers
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280033516050434113, guid: 0e757ef1309d9ec41a32f3e4bbed32ff,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
