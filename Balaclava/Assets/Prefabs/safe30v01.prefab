@@ -190,9 +190,10 @@ MonoBehaviour:
   panelActive: 0
   divider: 36
   badAudios:
-  - {fileID: 8300000, guid: b77025cad1ed53947973fd0c271b20ef, type: 3}
-  - {fileID: 8300000, guid: c84fc9ecbb451e04783152d4195a3097, type: 3}
-  goodAudio: {fileID: 8300000, guid: 409260d2fa2e8084982e864f0743effd, type: 3}
+  - {fileID: 8300000, guid: d5cf34377d2ce6941b9300dcc3ce5ed3, type: 3}
+  - {fileID: 8300000, guid: 8893463568f70e9468ad1df63a48ad35, type: 3}
+  - {fileID: 8300000, guid: c7bb5102009e6f34aac0bd279bbfd9a1, type: 3}
+  goodAudio: {fileID: 8300000, guid: e806d630630c9824db04a5c33947fadf, type: 3}
   keyNumber: 05000000080000000500000001000000
 --- !u!1 &2319675768943508145
 GameObject:
