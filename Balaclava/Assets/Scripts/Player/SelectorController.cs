@@ -9,6 +9,7 @@ public class SelectorController : MonoBehaviour
     bool selectable = false;
     bool key = true;
     bool door = false;
+    bool keySelected = false;
     public GameObject player;
     public GameObject camera;
     private GameObject selectedObject;
@@ -25,13 +26,20 @@ public class SelectorController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "SelectableObject")
+        if(other.gameObject.tag == "SelectableObject" || other.gameObject.tag == "KeyObject")
         {
+            if(other.gameObject.tag == "KeyObject")
+            {
+                keySelected = true;
+            }
+            else
+            {
+                selectable = true;
+            }
             // Change the cube color to green.
             MeshRenderer mesh = other.gameObject.GetComponent<MeshRenderer>();
             oldMaterial = mesh.material;
             mesh.material = iluminated;
-            selectable = true;
             selectedObject = other.gameObject;
         }
         else if(other.gameObject.tag == "DoorObject")
@@ -80,6 +88,12 @@ public class SelectorController : MonoBehaviour
             if (door)
             {
                 doorObject.GetComponentInChildren<DoorController>().CheckDoor(key);
+            }
+            if (keySelected)
+            {
+                key = true;
+                Destroy(selectedObject);
+                key = false;
             }
         }
         if (test)
