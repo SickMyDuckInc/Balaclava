@@ -21,14 +21,12 @@ public class SpawnerPlayer : MonoBehaviour
         if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_ANDROID) || operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_APPLE))
         {
             Debug.Log("SpawnPlayer movil en móvil");
-            //Instantiate(MobilePlayerPrefab, this.transform.position, this.transform.rotation);
             MobilePlayerPrefab.SetActive(true);
             Destroy(WindowsPlayerPrefab);
         }
         else
         {
             Debug.Log("SpawnPlayer Windows");
-            //Instantiate(WindowsPlayerPrefab, this.transform.position, this.transform.rotation);
             MovementJoystick.SetActive(false);
             RotationJoystick.SetActive(false);
             WindowsPlayerPrefab.SetActive(true);

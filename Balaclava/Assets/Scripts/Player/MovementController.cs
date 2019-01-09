@@ -19,7 +19,7 @@ public class MovementController : PlayerController
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawLine(this.transform.position, this.transform.forward * 10);
+        //Debug.DrawLine(this.transform.position, this.transform.forward * 10);
 
         if (enableMovement)
         {
