@@ -15,18 +15,21 @@ public class SelectorController : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        if(player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        if(camera == null)
+            camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "SelectableObject")
         {
             // Change the cube color to green.
-            oldMaterial = other.gameObject.GetComponent<MeshRenderer>().material;
-            other.gameObject.GetComponent<MeshRenderer>().material = iluminated;
-            selectable = true;
-            selectedObject = other.gameObject;
+            MeshRenderer mesh = other.gameObject.GetComponent<MeshRenderer>();
+            oldMaterial = mesh.material;
+            mesh.material = iluminated;
+            /*selectable = true;
+            selectedObject = other.gameObject;*/
         }
         
     }
@@ -54,7 +57,7 @@ public class SelectorController : MonoBehaviour
             camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
             selectedObject.GetComponentInChildren<Panel>().EnablePanel();
             camera.GetComponent<RotationController>().DisableRotation(selectedObject);
-            Debug.Log(player.transform.rotation.ToString());
+            //Debug.Log(player.transform.rotation.ToString());
         }
         if (test)
         {
@@ -68,6 +71,5 @@ public class SelectorController : MonoBehaviour
         player.GetComponent<MovementController>().EnableMovement();
 
         selected.GetComponentInChildren<Panel>().DisablePanel();
-
     }
 }

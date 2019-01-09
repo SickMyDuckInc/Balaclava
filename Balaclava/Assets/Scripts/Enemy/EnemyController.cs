@@ -22,7 +22,7 @@ public class EnemyController : Enemy
 
     void FixedUpdate()
     {
-        Debug.DrawRay(this.transform.position, this.transform.forward*10, Color.red);
+        //Debug.DrawRay(this.transform.position, this.transform.forward*10, Color.red);
 
         if (!agent.pathPending)
         {
@@ -56,7 +56,7 @@ public class EnemyController : Enemy
 
     public void Turn()
     {        
-        Debug.DrawLine(this.transform.position, target.transform.position, Color.blue, 10.0f);
+        //Debug.DrawLine(this.transform.position, target.transform.position, Color.blue, 10.0f);
 
         //direction of next waypoint
         Vector3 targetDir = (target.transform.position - this.transform.position);
