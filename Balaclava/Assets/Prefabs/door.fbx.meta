@@ -1,36 +1,36 @@
 fileFormatVersion: 2
-guid: 7aab8c3a05b9d284e91236ea1b028ccc
+guid: a908d7ac5031498469d766f7cec071f5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Door
-    100002: //RootNode
-    100004: DoorGlass
-    100006: Frame
-    100008: HandleIn
-    100010: HandleOut
-    400000: Door
-    400002: //RootNode
-    400004: DoorGlass
-    400006: Frame
-    400008: HandleIn
-    400010: HandleOut
+    100000: //RootNode
+    100002: Door.002
+    100004: DoorGlass.001
+    100006: Frame.001
+    100008: HandleIn.001
+    100010: HandleOut.001
+    400000: //RootNode
+    400002: Door.002
+    400004: DoorGlass.001
+    400006: Frame.001
+    400008: HandleIn.001
+    400010: HandleOut.001
     2100000: No Name
-    2300000: Door
-    2300002: DoorGlass
-    2300004: Frame
-    2300006: HandleIn
-    2300008: HandleOut
-    3300000: Door
-    3300002: DoorGlass
-    3300004: Frame
-    3300006: HandleIn
-    3300008: HandleOut
-    4300000: HandleOut
-    4300002: DoorGlass
-    4300004: HandleIn
-    4300006: Frame
-    4300008: Door
+    2300000: Door.002
+    2300002: DoorGlass.001
+    2300004: Frame.001
+    2300006: HandleIn.001
+    2300008: HandleOut.001
+    3300000: Door.002
+    3300002: DoorGlass.001
+    3300004: Frame.001
+    3300006: HandleIn.001
+    3300008: HandleOut.001
+    4300000: Door.002
+    4300002: Frame.001
+    4300004: HandleIn.001
+    4300006: DoorGlass.001
+    4300008: HandleOut.001
   externalObjects: {}
   materials:
     importMaterials: 1
