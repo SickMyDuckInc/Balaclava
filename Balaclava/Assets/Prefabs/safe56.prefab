@@ -626,9 +626,9 @@ MonoBehaviour:
   - {fileID: 269702916970441404}
   - {fileID: 3781016302246383190}
   colorsMaterialOn:
-  - {fileID: 2100000, guid: ffef0bd931f9bc3418a8cd5243d344f6, type: 2}
-  - {fileID: 2100000, guid: 938ea2d9423437a40bda73bf554ef431, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f276e2a312360a44388872283ab7418a, type: 2}
+  - {fileID: 2100000, guid: 253d64b714221424d89e768ea1ce7de3, type: 2}
+  - {fileID: 2100000, guid: b0ab9cc0eba0fe24283bbc6cb9fcfd22, type: 2}
   key: 09000000000000000700000008000000
   timeBlink: 0.5
   timeBetweenDigit: 1
@@ -1188,6 +1188,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 679706202322980104}
     m_Modifications:
+    - target: {fileID: 3980790603327183698, guid: b7d9bc30e9bde8348a2314f1c9351e86,
+        type: 3}
+      propertyPath: m_Name
+      value: panel
+      objectReference: {fileID: 0}
     - target: {fileID: 3464527976281832034, guid: b7d9bc30e9bde8348a2314f1c9351e86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1257,11 +1262,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.0072140805
-      objectReference: {fileID: 0}
-    - target: {fileID: 3980790603327183698, guid: b7d9bc30e9bde8348a2314f1c9351e86,
-        type: 3}
-      propertyPath: m_Name
-      value: panel
       objectReference: {fileID: 0}
     - target: {fileID: 9210775591211097095, guid: b7d9bc30e9bde8348a2314f1c9351e86,
         type: 3}
