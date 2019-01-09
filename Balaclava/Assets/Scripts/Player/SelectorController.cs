@@ -7,6 +7,9 @@ public class SelectorController : MonoBehaviour
     public Material iluminated;
     Material oldMaterial;
     bool selectable = false;
+    bool key = true;
+    bool door = false;
+    bool keySelected = false;
     public GameObject player;
     public GameObject camera;
     //action button
@@ -30,13 +33,20 @@ public class SelectorController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "SelectableObject")
+        if(other.gameObject.tag == "SelectableObject" || other.gameObject.tag == "KeyObject")
         {
+            if(other.gameObject.tag == "KeyObject")
+            {
+                keySelected = true;
+            }
+            else
+            {
+                selectable = true;
+            }
             // Change the cube color to green.
             MeshRenderer mesh = other.gameObject.GetComponent<MeshRenderer>();
             oldMaterial = mesh.material;
             mesh.material = iluminated;
-            selectable = true;
             selectedObject = other.gameObject;
         }
         
@@ -79,11 +89,21 @@ public class SelectorController : MonoBehaviour
 
                 player.GetComponent<MovementController>().DisableMovement();
                 player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
+                player.GetComponent<Rigidbody>().useGravity = false;
                 camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
                 selectedObject.GetComponentInChildren<Panel>().EnablePanel();
                 camera.GetComponent<RotationController>().DisableRotation(selectedObject);
                 //Debug.Log(player.transform.rotation.ToString());
             }
+            if (door)
+            {
+                doorObject.GetComponentInChildren<DoorController>().CheckDoor(key);
+            }
+            if (keySelected)
+            {
+                key = true;
+                Destroy(selectedObject);
+                key = false;
             if (test)
             {
                 //Debug.Log(player.transform.rotation.ToString());
@@ -103,13 +123,21 @@ public class SelectorController : MonoBehaviour
         ActionButton.SetActive(false);
         HelpText.SetActive(true);
     }
+            }
+        }
+        if (test)
+        {
+            //Debug.Log(player.transform.rotation.ToString());
+        }
+    }
 
     public void ReturnControl(GameObject selected)
     {
         selectable = false;
-        player.GetComponent<PlayerController>().EnableMovement();
+        player.GetComponent<MovementController>().EnableMovement();
 
         selected.GetComponentInChildren<Panel>().DisablePanel();
+        player.GetComponent<Rigidbody>().useGravity = true;
 
         if (SpawnerPlayer.ISDEVICE)
         {

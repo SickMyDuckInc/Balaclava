@@ -17,8 +17,8 @@ public class CameraController : MonoBehaviour {
         positiveMovement = true;
         waitingTime = false;
 
-        rightLimit = ConvertAngle(rightLimit);
-        leftLimit = ConvertAngle(leftLimit);
+        //rightLimit = ConvertAngle(rightLimit);
+        //leftLimit = ConvertAngle(leftLimit);
 	}
 	
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour {
 
     private void CameraMovement()
     {
-        float angle =  ConvertAngle(transform.rotation.eulerAngles.y);
+        float angle =  ConvertPositiveAngle(transform.rotation.eulerAngles.y);
         if(positiveMovement)
         {
             if(angle <= rightLimit)
@@ -46,8 +46,8 @@ public class CameraController : MonoBehaviour {
             }
         }
         else
-        {
-            if (angle >= leftLimit)
+        {            
+            if (Mathf.Abs(angle) >= leftLimit)
             {
                 transform.Rotate(Vector3.up * (-rotationSpeed * Time.deltaTime), Space.World);
             }
@@ -78,6 +78,15 @@ public class CameraController : MonoBehaviour {
             angle -= 360;
         }
         else if(angle < -180){
+            angle += 360;
+        }
+        return angle;
+    }
+
+    private float ConvertPositiveAngle(float angle)
+    {
+        if (angle < 0)
+        {
             angle += 360;
         }
         return angle;
