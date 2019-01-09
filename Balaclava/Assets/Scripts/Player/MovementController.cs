@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class MovementController : PlayerController
 {
-    public static string DEFAULT_OPERATING_SYSTEM = "windows";
-
     public float speed = 10.0f;
     
     float translation;
@@ -15,19 +13,7 @@ public class MovementController : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-
-        string operatingSystem = SystemInfo.operatingSystem;
-
-        //Prueba para canvas en moviles
-        if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM))
-        {
-            Debug.Log("Entro en windowsPlayer");
-        }
-        else
-        {
-            Debug.Log("Entro en Android, IphonePlayer");
-            this.enabled = false;
-        }
+     
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	
@@ -52,14 +38,25 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    public void EnableMovement()
+    public override void EnableMovement()
     {
         enableMovement = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    public void DisableMovement()
+
+    public override void DisableMovement()
     {
         enableMovement = false;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public override void EnableRotation()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void DisableRotation(GameObject handSelected)
+    {
+        //throw new System.NotImplementedException();
     }
 }

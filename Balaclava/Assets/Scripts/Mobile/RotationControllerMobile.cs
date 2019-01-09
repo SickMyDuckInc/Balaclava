@@ -2,34 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationControllerMobile : MonoBehaviour
+public class RotationControllerMobile : PlayerController
 {
-    public static string DEFAULT_OPERATING_SYSTEM = "windows";
-
     Vector2 JoystickLook;    
 
     [Header("Joystick elements")]
     public GameObject RotationJoystick;
     public Joystick rotJoystick;
 
-    public GameObject character;
+    GameObject character;
+    public GameObject Hands;
+    private GameObject handSelected;
+
+    private bool enableRotation = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        string operatingSystem = SystemInfo.operatingSystem;
+        /*string operatingSystem = SystemInfo.operatingSystem;
 
-        if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM))
+        if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_ANDROID) || operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_APPLE))
         {
-            RotationJoystick.SetActive(false);
-            this.enabled = false;
+            Debug.Log("Entro en móvil");
         }
         else
         {
-            Debug.Log("Entro en Android, IphonePlayer");
-            character = this.transform.parent.gameObject;
+            Debug.Log("Entro en Windows o Linux");
+            RotationJoystick.SetActive(false);
+            this.enabled = false;
         }
-
+        */
         character = this.transform.parent.gameObject;
     }
 
@@ -37,7 +39,7 @@ public class RotationControllerMobile : MonoBehaviour
     {
         Vector2 md = new Vector2(rotJoystick.Horizontal * Time.deltaTime * sensitivity, rotJoystick.Vertical * Time.deltaTime * sensitivity);
 
-        if (md != Vector2.zero)
+        if (md != Vector2.zero && enableRotation)
         {
             md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
             smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
@@ -48,5 +50,29 @@ public class RotationControllerMobile : MonoBehaviour
             character.transform.localRotation = Quaternion.AngleAxis(JoystickLook.x, Vector3.up);
             transform.localRotation = Quaternion.AngleAxis(-JoystickLook.y, Vector3.right);
         }
+    }
+
+    public override void EnableMovement()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void DisableMovement()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void EnableRotation()
+    {
+        enableRotation = true;
+        Hands.SetActive(true);
+        Hands.GetComponent<SelectorController>().ReturnControl(handSelected);
+    }
+
+    public override void DisableRotation(GameObject handSelected)
+    {
+        enableRotation = false;
+        Hands.SetActive(false);
+        this.handSelected = handSelected;
     }
 }
