@@ -10,13 +10,12 @@ public class EnemyController : Enemy
     void Start()
     {
         anim = GetComponent<Animator>();
-        waypoints = new List<Transform>(WaypointsManager.wp.waypoints.Count);
+        //waypoints = new List<Point>(WaypointsManager.wp.waypoints.Count);
         waypoints = WaypointsManager.wp.GetSceneWaypoints(enemyIndex);
-        waypointIndex = Random.Range(0 , waypoints.Count);
-        target = waypoints[waypointIndex];
+        waypointIndex = 0;
+        target = waypoints.list[waypointIndex];
         agent.SetDestination(target.position);
         anim.SetFloat(walk, 1f);
-        //Debug.Log(gameObject.name + " , initial waypoint = " + waypointIndex);
     }
 
 
@@ -30,17 +29,24 @@ public class EnemyController : Enemy
             {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    if (myState.Equals(states.Patrol))
+                    if (waypoints.stopPoints[waypointIndex])
                     {
-                        anim.SetFloat(walk, 0f);
-                        anim.SetBool(lookAround, true);
-                        GetNextWaypoint();
+                        if (myState.Equals(states.Patrol))
+                        {
+                            anim.SetFloat(walk, 0f);
+                            anim.SetBool(lookAround, true);
+                            GetNextWaypoint();
+                        }
+                        else
+                        {
+                            //stay in idle next to the player and ends the game
+                            anim.SetFloat(walk, 0f);
+                        }
                     }
                     else
                     {
-                        //stay in idle next to the player and ends the game
-                        anim.SetFloat(walk, 0f);
-                    }                    
+                        GetNextWayPointWithoutStop();
+                    }
                 }
             }
         }
@@ -138,17 +144,28 @@ public class EnemyController : Enemy
     void GetNextWaypoint()
     {
         agent.isStopped = true;
-        int tempIndex = Random.Range(0, waypoints.Count);
+        waypointIndex++;
 
-        while(tempIndex == waypointIndex)
+        if(waypointIndex >= waypoints.list.Count)
         {
-            tempIndex = Random.Range(0, waypoints.Count);
+            waypointIndex = 0;
         }
 
-        waypointIndex = tempIndex;
-
-        target = waypoints[waypointIndex];
+        target = waypoints.list[waypointIndex];
         agent.SetDestination(target.position);       
+    }
+
+    void GetNextWayPointWithoutStop()
+    {
+        waypointIndex++;
+
+        if (waypointIndex >= waypoints.list.Count)
+        {
+            waypointIndex = 0;
+        }
+
+        target = waypoints.list[waypointIndex];
+        agent.SetDestination(target.position);
     }
     #endregion
 
