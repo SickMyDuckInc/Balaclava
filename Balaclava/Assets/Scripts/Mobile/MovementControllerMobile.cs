@@ -16,20 +16,7 @@ public class MovementControllerMobile : PlayerController {
 
     private void Start()
     {
-        //debug.text = "SystemInfo: " + SystemInfo.operatingSystem;
-        /*string operatingSystem = SystemInfo.operatingSystem;
-
-        if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_ANDROID) || operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_APPLE))
-        {
-            Debug.Log("Entro en Android, IphonePlayer");
-        }
-        else
-        {
-            Debug.Log("Entro en Windows o Linux");
-            MovementJoystick.SetActive(false);
-            this.enabled = false;
-        }*/
-
+        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update () 
