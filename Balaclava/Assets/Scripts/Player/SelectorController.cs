@@ -48,15 +48,26 @@ public class SelectorController : MonoBehaviour
         {
             
             //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
-            camera.GetComponent<RotationController>().DisableRotation();
+            
             player.GetComponent<MovementController>().DisableMovement();
             player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
             camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
+            selectedObject.GetComponentInChildren<Panel>().EnablePanel();
+            camera.GetComponent<RotationController>().DisableRotation(selectedObject);
             Debug.Log(player.transform.rotation.ToString());
         }
         if (test)
         {
             //Debug.Log(player.transform.rotation.ToString());
         }
+    }
+
+    public void ReturnControl(GameObject selected)
+    {
+        selectable = false;
+        player.GetComponent<MovementController>().EnableMovement();
+
+        selected.GetComponentInChildren<Panel>().DisablePanel();
+
     }
 }

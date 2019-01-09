@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelController : MonoBehaviour
+public class PanelController : Panel
 {
-    private bool panelActive;
     public int key;
     private int numberIntroduce;
     private int count;
@@ -14,7 +13,6 @@ public class PanelController : MonoBehaviour
     {
         count = 0;
         numberIntroduce = 0;
-        panelActive = true;
         tries = 0;
     }
 
@@ -38,6 +36,8 @@ public class PanelController : MonoBehaviour
                 {
                     Debug.Log("Exito");
                     //Abrir puerta o lo que sea
+                    transform.parent.gameObject.tag = "Untagged";
+                    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RotationController>().EnableRotation();
                 }
                 else
                 {
@@ -56,10 +56,5 @@ public class PanelController : MonoBehaviour
             }
         }
         
-    }
-
-    public void EnablePanel()
-    {
-        panelActive = true;
     }
 }
