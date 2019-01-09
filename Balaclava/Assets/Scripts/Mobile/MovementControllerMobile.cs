@@ -1,51 +1,70 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
+using System.Runtime.InteropServices;
+using UnityEngine.UI;
 
-public class MovementControllerMobile : MonoBehaviour {
+public class MovementControllerMobile : PlayerController {
+
+    public static string DEFAULT_OPERATING_SYSTEM = "windows";
 
     public float moveSpeed = 8f;
     [Header("Joystick elements")]
     public GameObject MovementJoystick;
     public Joystick joystick;
-    public GameObject RotationJoystick;
-    public Joystick rotJoystick;
-    public Camera cam;
+
+    private bool enableMovement = true;
 
     private void Start()
     {
-        if (SystemInfo.deviceType != DeviceType.Handheld)
+        //debug.text = "SystemInfo: " + SystemInfo.operatingSystem;
+        /*string operatingSystem = SystemInfo.operatingSystem;
+
+        if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_ANDROID) || operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_APPLE))
         {
-            RotationJoystick.SetActive(false);
-            MovementJoystick.SetActive(false);
-            this.enabled = false;
+            Debug.Log("Entro en Android, IphonePlayer");
         }
         else
         {
-            Debug.Log("Entro en Android, IphonePlayer");
-            RotationJoystick.SetActive(true);
-            MovementJoystick.SetActive(true);
-            //Screen.orientation = ScreenOrientation.LandscapeLeft;
-        }
+            Debug.Log("Entro en Windows o Linux");
+            MovementJoystick.SetActive(false);
+            this.enabled = false;
+        }*/
+
     }
 
     void Update () 
 	{
-        Debug.DrawLine(this.transform.position, this.transform.forward * 10);
-        Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
-        Vector3 rotateVector = (Vector3.up * rotJoystick.Horizontal + Vector3.forward * rotJoystick.Vertical);
-
-
-        if (moveVector != Vector3.zero)
-        {           
-            transform.Translate(moveVector * moveSpeed * Time.deltaTime, Space.World);
-        }
-        if(rotateVector != Vector3.zero)
+        if (enableMovement)
         {
-            float Yaxis = rotateVector.z * moveSpeed/2;
-            float Zaxis = rotateVector.y * moveSpeed/2;
-            Vector3 rot = new Vector3(transform.rotation.x, transform.rotation.y * Yaxis, transform.rotation.z * Zaxis);
+            Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
 
-            cam.transform.Rotate(Vector3.up * Yaxis, Space.World);
-            cam.transform.Rotate(Vector3.forward * Zaxis, Space.World);
+            if (moveVector != Vector3.zero)
+            {
+                transform.Translate(moveVector * moveSpeed * Time.deltaTime);
+            }
         }
+        
+    }
+
+    public override void DisableMovement()
+    {
+        enableMovement = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public override void DisableRotation(GameObject handSelected)
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void EnableMovement()
+    {
+        enableMovement = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public override void EnableRotation()
+    {
+        //throw new System.NotImplementedException();
     }
 }

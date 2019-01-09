@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public class MovementController : PlayerController
 {
-
     public float speed = 10.0f;
     
     float translation;
@@ -14,22 +13,14 @@ public class MovementController : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-
-        //Prueba para canvas en moviles
-        if (SystemInfo.deviceType != DeviceType.Handheld)
-        {
-            Debug.Log("Entro en windowsPlayer");
-        }
-        else
-        {
-            Debug.Log("Entro en Android, IphonePlayer");
-            this.enabled = false;
-        }
+     
         Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	// Update is called once per frame
-	void Update () {      
+	void Update () {
+        Debug.DrawLine(this.transform.position, this.transform.forward * 10);
+
         if (enableMovement)
         {
             translation = Input.GetAxis("Vertical") * speed;
@@ -39,23 +30,33 @@ public class MovementController : MonoBehaviour
             straffe *= Time.deltaTime;
 
             transform.Translate(straffe, 0, translation);
-           
-
-            
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
         }
     }
-    public void EnableMovement()
+
+    public override void EnableMovement()
     {
         enableMovement = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
-    public void DisableMovement()
+
+    public override void DisableMovement()
     {
         enableMovement = false;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public override void EnableRotation()
+    {
+        //throw new System.NotImplementedException();
+    }
+
+    public override void DisableRotation(GameObject handSelected)
+    {
+        //throw new System.NotImplementedException();
     }
 }

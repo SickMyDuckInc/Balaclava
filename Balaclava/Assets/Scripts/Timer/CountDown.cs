@@ -12,6 +12,7 @@ public class CountDown : MonoBehaviour
     [Header("Time in minutes")]
     public float gameTimer = 10f;
 
+    public Canvas canvas;
     [HideInInspector]
     public bool callPolice;
     private bool gameOver;
@@ -88,6 +89,11 @@ public class CountDown : MonoBehaviour
             }
    
         }       
+    }
+
+    private void LateUpdate()
+    {
+        canvas.additionalShaderChannels = AdditionalCanvasShaderChannels.None;
     }
 
     public void ActivatePoliceTime()

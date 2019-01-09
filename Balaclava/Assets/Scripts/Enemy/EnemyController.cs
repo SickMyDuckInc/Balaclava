@@ -66,7 +66,7 @@ public class EnemyController : Enemy
 
         //angle between our vector forward and direction of next waypoint
         float degrees = Vector3.Angle(this.transform.forward, targetDir);
-        Debug.Log("El ángulo en GRADOS es: " + degrees + " y dirección es = " + direction + "  ---------------------------------------------------------------------------------------");
+        //Debug.Log("El ángulo en GRADOS es: " + degrees + " y dirección es = " + direction + "  ---------------------------------------------------------------------------------------");
 
         if(degrees > 135 || degrees < 25)
         {

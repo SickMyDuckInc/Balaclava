@@ -237,7 +237,6 @@ GameObject:
   - component: {fileID: 6632402486803555827}
   - component: {fileID: 6632402486803555343}
   - component: {fileID: 6632402486803555826}
-  - component: {fileID: 6632402486803555336}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -252,7 +251,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6632402486803555825}
-  m_LocalRotation: {x: -0, y: -0.7327784, z: -0, w: 0.68046737}
+  m_LocalRotation: {x: 0, y: -0.73278046, z: 0, w: 0.6804651}
   m_LocalPosition: {x: 2.03, y: 1, z: -8.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -347,22 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3a86ff4dab97c44bb0992a0fd70415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sensitivity: 5
+  smoothing: 2
   speed: 10
---- !u!114 &6632402486803555336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6632402486803555825}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17d77c119ec1804caa2a79686663b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  MovementJoystick: {fileID: 0}
-  joystick: {fileID: 0}
-  RotationJoystick: {fileID: 0}
-  rotJoystick: {fileID: 0}
-  cam: {fileID: 6632402485243444334}
