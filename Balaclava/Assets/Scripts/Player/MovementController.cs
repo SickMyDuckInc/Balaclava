@@ -9,16 +9,19 @@ public class MovementController : PlayerController
     float translation;
     float straffe;
 
+    private Rigidbody rb;
+
     private bool enableMovement = true;
 
     // Use this for initialization
     void Start () {
      
         Cursor.lockState = CursorLockMode.Locked;
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         //Debug.DrawLine(this.transform.position, this.transform.forward * 10);
 
         if (enableMovement)
@@ -30,6 +33,7 @@ public class MovementController : PlayerController
             straffe *= Time.deltaTime;
 
             transform.Translate(straffe, 0, translation);
+            //rb.MovePosition(rb.position + (translation * Vector3.forward));
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))

@@ -14,7 +14,9 @@ public class EnemyController : Enemy
         waypoints = WaypointsManager.wp.GetSceneWaypoints(enemyIndex);
         waypointIndex = 0;
         target = waypoints.list[waypointIndex];
-        agent.SetDestination(target.position);
+        NavMeshHit hit;
+        NavMesh.SamplePosition(target.position, out hit, 5.0f, NavMesh.AllAreas);
+        agent.SetDestination(hit.position);
         anim.SetFloat(walk, 1f);
     }
 
@@ -165,7 +167,9 @@ public class EnemyController : Enemy
         }
 
         target = waypoints.list[waypointIndex];
-        agent.SetDestination(target.position);
+        NavMeshHit hit;
+        NavMesh.SamplePosition(target.position, out hit, 5.0f, NavMesh.AllAreas);
+        agent.SetDestination(hit.position);
     }
     #endregion
 

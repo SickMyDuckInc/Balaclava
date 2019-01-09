@@ -107,6 +107,7 @@ public class LockController : Panel
                     if (number == keyNumber[index])
                     {
                         Debug.Log("Número correcto");
+                        oldMovement = movement;
                         index++;
                     }
                     else
@@ -122,7 +123,7 @@ public class LockController : Panel
                     transform.parent.gameObject.tag = "Untagged";
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RotationController>().EnableRotation();
                 }
-                oldMovement = movement;
+                
 
             }
         }
