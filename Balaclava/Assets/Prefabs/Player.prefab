@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 6632402485243444334}
   - component: {fileID: 6632402485243444333}
   - component: {fileID: 6632402485243444328}
+  - component: {fileID: 1780404752}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6632402485243444332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ba59aae34d2c134688309cb55e326bd, type: 3}
   m_Name: 
@@ -223,6 +224,22 @@ MonoBehaviour:
   sensitivity: 5
   smoothing: 2
   Hands: {fileID: 6632402484995757047}
+--- !u!114 &1780404752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632402485243444332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbd1122c5b63484c8a804981368b075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 5
+  smoothing: 2
+  RotationJoystick: {fileID: 0}
+  rotJoystick: {fileID: 0}
 --- !u!1 &6632402486803555825
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +269,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6632402486803555825}
-  m_LocalRotation: {x: -0, y: -0.7327784, z: -0, w: 0.68046737}
+  m_LocalRotation: {x: 0, y: -0.73278046, z: 0, w: 0.6804651}
   m_LocalPosition: {x: 2.03, y: 1, z: -8.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -342,7 +359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6632402486803555825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da3a86ff4dab97c44bb0992a0fd70415, type: 3}
   m_Name: 
@@ -355,7 +372,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6632402486803555825}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c17d77c119ec1804caa2a79686663b78, type: 3}
   m_Name: 
@@ -363,6 +380,4 @@ MonoBehaviour:
   moveSpeed: 8
   MovementJoystick: {fileID: 0}
   joystick: {fileID: 0}
-  RotationJoystick: {fileID: 0}
-  rotJoystick: {fileID: 0}
-  cam: {fileID: 6632402485243444334}
+  debug: {fileID: 0}
