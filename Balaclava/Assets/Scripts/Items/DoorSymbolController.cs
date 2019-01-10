@@ -15,10 +15,21 @@ public class DoorSymbolController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void StartSymbols()
+    {
         value = 0;
         for (int i = 0; i < symbols.Length; i++)
         {
-            
+
         }
 
         for (int i = 0; i < symbols.Length; i++)
@@ -58,7 +69,7 @@ public class DoorSymbolController : MonoBehaviour
                 default:
                     int aux;
                     int.TryParse(symbols[i].GetComponent<SymbolString>().value, out aux);
-                    value += aux;   
+                    value += aux;
                     break;
             }
         }
@@ -84,17 +95,10 @@ public class DoorSymbolController : MonoBehaviour
                 key = value;
             }
         }
-        
+
 
         GetComponent<PanelDoorSymbolController>().key = key;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private int Dozens(int number)
     {
         int i = 0;

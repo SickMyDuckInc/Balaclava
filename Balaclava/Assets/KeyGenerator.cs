@@ -12,6 +12,10 @@ public class KeyGenerator : MonoBehaviour
     };
     public Material[] symbolMaterial = new Material[4];
     public Material[] codeMaterials = new Material[6];
+    public string[] letras = new string[6]
+    {
+        "A","S","E","X","P","J"
+    };
     public Material[] symbolsDoor = new Material[28];
     public Material[] letterDoor = new Material[6];
     // Start is called before the first frame update
@@ -121,6 +125,31 @@ public class KeyGenerator : MonoBehaviour
 
     private void GenerateKeyPanelSymbol()
     {
+        int hayletra = Random.Range(0, 5);
+        DoorSymbolController ds = GetComponent<DoorSymbolController>();
+        int random;
+        if(hayletra == 0)
+        {
+            random = Random.Range(0, 6);
+            ds.symbols[0].GetComponent<SymbolString>().value = letras[random];
+            ds.symbols[0].GetComponent<Renderer>().material = letterDoor[random];
 
+            for(int i =1; i < 4; i++)
+            {
+                random = Random.Range(1, 29);
+                ds.symbols[i].GetComponent<SymbolString>().value = (random + 1).ToString();
+                ds.symbols[i].GetComponent<Renderer>().material = symbolsDoor[random];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                random = Random.Range(0, 28);
+                ds.symbols[i].GetComponent<SymbolString>().value = (random +1).ToString();
+                ds.symbols[i].GetComponent<Renderer>().material = symbolsDoor[random];
+            }
+        }
+        ds.StartSymbols();
     }
 }
