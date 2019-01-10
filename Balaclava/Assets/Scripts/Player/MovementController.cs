@@ -33,7 +33,6 @@ public class MovementController : PlayerController
             straffe *= Time.deltaTime;
 
             transform.Translate(straffe, 0, translation);
-            print("aaaa");
             //rb.MovePosition(rb.position + (translation * Vector3.forward));
         }
 
@@ -45,6 +44,7 @@ public class MovementController : PlayerController
 
     public override void EnableMovement()
     {
+        base.EnableMovement();
         enableMovement = true;
         rb.isKinematic = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,6 +52,7 @@ public class MovementController : PlayerController
 
     public override void DisableMovement()
     {
+        base.DisableMovement();
         enableMovement = false;
         rb.isKinematic = true;
         Cursor.lockState = CursorLockMode.None;
