@@ -15,6 +15,7 @@ public class PanelDoorSymbolController : Panel
         count = 0;
         numberIntroduce = 0;
         tries = 0;
+        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,12 +31,16 @@ public class PanelDoorSymbolController : Panel
             count++;
             numberIntroduce *= 10;
             numberIntroduce += button;
+            audioS.clip = standardAudio;
+            audioS.Play();
 
             if (count == 4)
             {
                 if (numberIntroduce == key)
                 {
                     Debug.Log("Exito");
+                    audioS.clip = goodAudio;
+                    audioS.Play();
                     //Abrir puerta o lo que sea
                     transform.parent.gameObject.tag = "Untagged";
                     door.GetComponent<DoorController>().CheckDoor(true);
@@ -51,6 +56,8 @@ public class PanelDoorSymbolController : Panel
                 }
                 else
                 {
+                    audioS.clip = badAudio;
+                    audioS.Play();
                     tries++;
                     if (tries == 3)
                     {
