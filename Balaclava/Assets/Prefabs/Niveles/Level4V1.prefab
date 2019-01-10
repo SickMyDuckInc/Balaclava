@@ -1355,6 +1355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3026631736103140511}
     m_Modifications:
+    - target: {fileID: 6601907196607750744, guid: bc1e385eba655794780d767e7701920b,
+        type: 3}
+      propertyPath: m_Name
+      value: WayPoints
+      objectReference: {fileID: 0}
     - target: {fileID: 6601907196607750745, guid: bc1e385eba655794780d767e7701920b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1409,11 +1414,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6601907196607750744, guid: bc1e385eba655794780d767e7701920b,
-        type: 3}
-      propertyPath: m_Name
-      value: WayPoints
       objectReference: {fileID: 0}
     - target: {fileID: 6601907195185752109, guid: bc1e385eba655794780d767e7701920b,
         type: 3}
@@ -1968,6 +1968,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3026631736103140511}
     m_Modifications:
+    - target: {fileID: 6632402486803555825, guid: 4d39c8718ff183c459b2102c08e15f42,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6632402486803555342, guid: 4d39c8718ff183c459b2102c08e15f42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2022,11 +2027,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6632402486803555825, guid: 4d39c8718ff183c459b2102c08e15f42,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6632402486803555827, guid: 4d39c8718ff183c459b2102c08e15f42,
         type: 3}
