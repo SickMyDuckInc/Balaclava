@@ -15,6 +15,9 @@ public class SpawnerPlayer : MonoBehaviour
     public GameObject MovementJoystick;
     public GameObject RotationJoystick;
 
+    public GameObject ActionButton;
+    public GameObject HelpText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,12 @@ public class SpawnerPlayer : MonoBehaviour
             Destroy(MobilePlayerPrefab);
             ISDEVICE = false;
         }
+
+        //Hide always at start
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
+        
+        
 
         /*MobilePlayerPrefab.SetActive(true);
         Destroy(WindowsPlayerPrefab);

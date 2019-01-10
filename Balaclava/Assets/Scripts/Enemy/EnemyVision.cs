@@ -8,11 +8,13 @@ public class EnemyVision : MonoBehaviour
     //my position
     public Transform securityGuardPosition;
 
+    public EnemyController em;
+
     Vector3 playerDirection;
     RaycastHit hit;
 
-    //player visible
     private bool isPlayerVisible;
+
     //max distance of RayCast
     float maxDistance;
     //layer mask
@@ -28,7 +30,13 @@ public class EnemyVision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (!em.playerEnabledToSearch)
+        {
+            Debug.Log("Enter PlayerEnabledToSearch = false");
+            return;
+        }
+
+        if (other.gameObject.tag.Equals("Player") && em.playerEnabledToSearch)
         {
             Debug.Log("Player detected");
             playerDirection = other.gameObject.transform.position - securityGuardPosition.position;
@@ -52,7 +60,13 @@ public class EnemyVision : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (!em.playerEnabledToSearch)
+        {
+            Debug.Log("PlayerEnabledToSearch = false");
+            return;
+        }
+
+        if (other.gameObject.tag.Equals("Player") && em.playerEnabledToSearch)
         {
             //Debug.Log("Player detected");
             playerDirection = other.gameObject.transform.position - securityGuardPosition.position;
