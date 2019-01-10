@@ -13,6 +13,7 @@ public class ProLasserController : MonoBehaviour
 
     private int selected;
     private bool laserIsActive;
+    private bool finish = false;
 
     private IEnumerator coroutine;
 
@@ -81,13 +82,14 @@ public class ProLasserController : MonoBehaviour
         laserIsActive = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (laserIsActive)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player" && !finish)
             {
-                CountDown.cd.ActivatePoliceTime();
+                GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
+                finish = true;
             }
         }
     }
