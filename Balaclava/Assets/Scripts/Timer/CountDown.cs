@@ -91,10 +91,10 @@ public class CountDown : MonoBehaviour
         }       
     }
 
-    /*private void LateUpdate()
+    private void LateUpdate()
     {
         canvas.additionalShaderChannels = AdditionalCanvasShaderChannels.None;
-    }*/
+    }
 
     public void ActivatePoliceTime()
     {

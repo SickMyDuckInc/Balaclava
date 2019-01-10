@@ -62,7 +62,7 @@ public class EnemyVision : MonoBehaviour
     {
         if (!em.playerEnabledToSearch)
         {
-            Debug.Log("PlayerEnabledToSearch = false");
+            //Debug.Log("PlayerEnabledToSearch = false");
             return;
         }
 
@@ -85,5 +85,14 @@ public class EnemyVision : MonoBehaviour
                     isPlayerVisible = false;
             }
         }
-    } 
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+            isPlayerVisible = false;
+        }
+    }
 }

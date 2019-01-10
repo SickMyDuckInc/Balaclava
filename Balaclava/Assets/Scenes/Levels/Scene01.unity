@@ -771,6 +771,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7120124288177027084, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: MovementJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118633859011747139, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: m_TagString
+      value: RotationJoystick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8919f05f26798eb40900456409e5a8ac, type: 3}
 --- !u!1 &1000062235

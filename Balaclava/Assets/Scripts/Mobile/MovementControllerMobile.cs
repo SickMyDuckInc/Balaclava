@@ -31,7 +31,7 @@ public class MovementControllerMobile : PlayerController {
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
+        JoystickLook = new Vector2(camera.transform.eulerAngles.z, camera.transform.eulerAngles.y);
     }
 
     void FixedUpdate () 
@@ -59,19 +59,18 @@ public class MovementControllerMobile : PlayerController {
             this.transform.localRotation = Quaternion.AngleAxis(JoystickLook.x, Vector3.up);
             camera.transform.localRotation = Quaternion.AngleAxis(-JoystickLook.y, Vector3.right);
         }
-
     }
 
     public override void DisableMovement()
     {
+        base.DisableMovement();
         enableMovement = false;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public override void EnableMovement()
     {
+        base.EnableMovement();
         enableMovement = true;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public override void EnableRotation()

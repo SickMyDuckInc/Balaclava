@@ -43,8 +43,6 @@ public class SpawnerPlayer : MonoBehaviour
         //Hide always at start
         ActionButton.SetActive(false);
         HelpText.SetActive(false);
-        
-        
 
         /*MobilePlayerPrefab.SetActive(true);
         Destroy(WindowsPlayerPrefab);

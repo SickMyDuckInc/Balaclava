@@ -528,6 +528,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 860502323}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &543326504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5674052896577736082, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 860502323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543326502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecce8d3f549de045bea5fd79de9e7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &570495246
 GameObject:
   m_ObjectHideFlags: 0
@@ -4707,6 +4719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5702668100661745540, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: MovementJoystick
+      objectReference: {fileID: 0}
     - target: {fileID: 5703324024575403493, guid: 5bc44576bbca8b548bb34a493f66e6d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4822,6 +4839,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5703324024469248128, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703324024469248128, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 53.65
+      objectReference: {fileID: 0}
     - target: {fileID: 5703324025050695211, guid: 5bc44576bbca8b548bb34a493f66e6d6,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -4841,6 +4868,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703324025569129163, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: RotationJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5703324025372000805, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1131156520}
+    - target: {fileID: 5703324025372000805, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonPressed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc44576bbca8b548bb34a493f66e6d6, type: 3}
@@ -5201,13 +5243,25 @@ Transform:
   m_Father: {fileID: 1805963321}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1131156520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
+    type: 3}
+  m_PrefabInstance: {fileID: 4581097316401245872}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc642bbbb632f74ab6d0a343d21847c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1136627958
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5396
+  m_Name: pb_Mesh95606
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5545,7 +5599,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3922
+  m_Name: pb_Mesh96784
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5983,7 +6037,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5302
+  m_Name: pb_Mesh96768
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6222,6 +6276,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 860502323}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1445842086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5703324025569129161, guid: 5bc44576bbca8b548bb34a493f66e6d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 860502323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445842084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d141c5b192dce1b42baba37c7f867f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1566321846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6380,7 +6446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653984687}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.49, y: 0, z: -35.19}
+  m_LocalPosition: {x: 33.65, y: 0, z: -41.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1805963321}
@@ -6453,7 +6519,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2840
+  m_Name: pb_Mesh98534
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6998,7 +7064,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4930
+  m_Name: pb_Mesh97180
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -7519,11 +7585,26 @@ PrefabInstance:
         type: 3}
       propertyPath: MovementJoystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 543326502}
     - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
         type: 3}
       propertyPath: joystick
       value: 
+      objectReference: {fileID: 543326504}
+    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: RotationPanel
+      value: 
+      objectReference: {fileID: 1445842084}
+    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: rotPanel
+      value: 
+      objectReference: {fileID: 1445842086}
+    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: sensitivity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
         type: 3}
