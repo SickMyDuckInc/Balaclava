@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4086627610051096268}
   - component: {fileID: 3460358009754824565}
   - component: {fileID: 1211019539}
+  - component: {fileID: 16945461688252333}
   - component: {fileID: 1211019538}
   m_Layer: 0
-  m_Name: SafeLockerMove
+  m_Name: SafeLockerMove01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +176,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &16945461688252333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130153681257592191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d30746555e6374faea213b0c77fc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1211019538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,12 +201,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelActive: 0
+  standardAudio: {fileID: 0}
+  goodAudio: {fileID: 8300000, guid: e806d630630c9824db04a5c33947fadf, type: 3}
+  badAudio: {fileID: 0}
   divider: 36
   badAudios:
   - {fileID: 8300000, guid: d5cf34377d2ce6941b9300dcc3ce5ed3, type: 3}
   - {fileID: 8300000, guid: 8893463568f70e9468ad1df63a48ad35, type: 3}
   - {fileID: 8300000, guid: c7bb5102009e6f34aac0bd279bbfd9a1, type: 3}
-  goodAudio: {fileID: 8300000, guid: e806d630630c9824db04a5c33947fadf, type: 3}
   keyNumber: 05000000080000000500000001000000
 --- !u!1 &2319675768943508145
 GameObject:
