@@ -8,6 +8,7 @@ public class PanelController : Panel
     private int numberIntroduce;
     private int count;
     private int tries;
+    public GameObject door;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,12 @@ public class PanelController : Panel
                     audioS.clip = goodAudio;
                     audioS.Play();
                     Debug.Log("Exito");
+                    door.SetActive(false);
+                    foreach (Renderer r in GetComponentsInChildren<Renderer>())
+                        r.enabled = false;
+
+                    GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().rewardPlayer();
+
                     //Abrir puerta o lo que sea
                     transform.parent.gameObject.tag = "Untagged";
                     
@@ -61,6 +68,7 @@ public class PanelController : Panel
                     if (tries == 3)
                     {
                         Debug.Log("has perdido");
+                        GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
                     }
                     else
                     {

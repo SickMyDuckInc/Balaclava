@@ -8,7 +8,7 @@ public class LightController : MonoBehaviour
     public GameObject []colors = new GameObject[3];
     public Material[] colorsMaterialOn = new Material[3];
     private Material[] colorsMaterialOff = new Material[3];
-
+    
     public int []key = new int[4];
     private List<string[]> blink = new List<string[]>()
     {
