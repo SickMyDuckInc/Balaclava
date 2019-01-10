@@ -140,7 +140,8 @@ public class SelectorController : MonoBehaviour
                 {
                     key = true;
                     drawer = false;
-                    Destroy(selectedObject);
+                    selectedObject.SetActive(false);
+                    //Destroy(selectedObject);
                     keySelected = false;
                 }
                 if (drawer)
