@@ -90,11 +90,6 @@ public class SelectorController : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material = keyMat;
             keySelected = false;
         }
-        if (SpawnerPlayer.ISDEVICE)
-        {
-            ActionButton.SetActive(false);
-            HelpText.SetActive(false);
-        }
     }
 
     private void Update()

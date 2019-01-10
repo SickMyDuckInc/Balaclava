@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   securityGuardPosition: {fileID: 4154021153174908}
+  em: {fileID: 1254403252897969}
 --- !u!1 &1001868374827030
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac58f46791a4964282798bb47a04c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerEnabledToSearch: 0
   agent: {fileID: 7781993954597041514}
   enemyIndex: 0
 --- !u!1 &1280262292577798
