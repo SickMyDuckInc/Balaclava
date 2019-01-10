@@ -14,6 +14,7 @@ public class LaserController : MonoBehaviour
 
     private bool triggerA;
     private bool triggerB;
+    private bool finish = false;
 
     private bool laserIsActive;
 
@@ -86,13 +87,14 @@ public class LaserController : MonoBehaviour
         laserIsActive = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (laserIsActive)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player" && !finish)
             {
-                CountDown.cd.ActivatePoliceTime();
+                GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
+                finish = true;
             }
         } 
     }
