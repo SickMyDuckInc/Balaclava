@@ -25,6 +25,7 @@ public class LockController : Panel
     // Start is called before the first frame update
     void Start()
     {
+        
         index = 0;
         audioS = GetComponent<AudioSource>();
 
@@ -32,6 +33,7 @@ public class LockController : Panel
         joystickPressedOnce = false;
         joystickReleased = true;
         resolved = false;
+        this.GetComponent<KeyGenerator>().GenerateKey();
     }
 
     // Update is called once per frame
