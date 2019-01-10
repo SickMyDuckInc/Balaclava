@@ -132,6 +132,7 @@ public class SelectorController : MonoBehaviour
                 if (keySelected && drawerOpen)
                 {
                     key = true;
+                    drawer = false;
                     Destroy(selectedObject);
                     keySelected = false;
                 }
