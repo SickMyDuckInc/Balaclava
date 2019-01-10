@@ -1386,8 +1386,9 @@ GameObject:
   - component: {fileID: 9201670448573617324}
   - component: {fileID: 5227691201325298580}
   - component: {fileID: 6042886780372600139}
+  - component: {fileID: 6874145881029743185}
   m_Layer: 0
-  m_Name: panel
+  m_Name: panelSymbol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1550,6 +1551,73 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6874145881029743185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227691201325298581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d30746555e6374faea213b0c77fc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbolMaterial:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  codeMaterials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  letras:
+  - A
+  - S
+  - E
+  - X
+  - P
+  - J
+  symbolsDoor:
+  - {fileID: 2100000, guid: ece2fff334e6b604d98a428f672b72d0, type: 2}
+  - {fileID: 2100000, guid: 47fc59098f1280440b0422ade6b7a514, type: 2}
+  - {fileID: 2100000, guid: e8c381c3dd3e9d941b2e166ce139c249, type: 2}
+  - {fileID: 2100000, guid: 1fe118eabc56e1d40a93c35075062e16, type: 2}
+  - {fileID: 2100000, guid: 17a324e18f6a3ee4a9d0e68b4df0fa40, type: 2}
+  - {fileID: 2100000, guid: 80e0168faa4a1994a994fe76ced9fef9, type: 2}
+  - {fileID: 2100000, guid: 9f7435ef7ebfeb24588ec58754af1ba3, type: 2}
+  - {fileID: 2100000, guid: 04c0e1c7a077e8141b8ff3e09d4e3662, type: 2}
+  - {fileID: 2100000, guid: f4a9be38eddd6d346907251bbd07a5ae, type: 2}
+  - {fileID: 2100000, guid: 64a0f7d61d16cce4db5bbaeb36221c79, type: 2}
+  - {fileID: 2100000, guid: f1ed475ac8078bd47a9697a9e33acd1b, type: 2}
+  - {fileID: 2100000, guid: c7d366cac92a15649868c01787b418d0, type: 2}
+  - {fileID: 2100000, guid: f966e07059ae4fb46a59ad77919ab3ea, type: 2}
+  - {fileID: 2100000, guid: dfd599f408f786e44aa8c0aed090d82d, type: 2}
+  - {fileID: 2100000, guid: 5c829353f8c7bd146a7d7ef2ef15b0b9, type: 2}
+  - {fileID: 2100000, guid: a735bea5af98d8949877b4cca99f1d14, type: 2}
+  - {fileID: 2100000, guid: 72a929d4df5bfa349be1dbf7e9f85734, type: 2}
+  - {fileID: 2100000, guid: 20e5ed69423421e4ca15777d544acbba, type: 2}
+  - {fileID: 2100000, guid: 5a87a8257cef30e428d8566b9076158f, type: 2}
+  - {fileID: 2100000, guid: 64b5dce9f1c5ef84daa3da8fc7fb126f, type: 2}
+  - {fileID: 2100000, guid: 3083c62c6611e6146bc79b75ed51f72a, type: 2}
+  - {fileID: 2100000, guid: 71d11509d5e07f84699a14b338fd3ad4, type: 2}
+  - {fileID: 2100000, guid: 41c59105edc48664ab1370623e489e48, type: 2}
+  - {fileID: 2100000, guid: ddca17cfe893b4c4f9442cc3b4221d83, type: 2}
+  - {fileID: 2100000, guid: ff57dfaf5bd034b4cb1d1a5e16497297, type: 2}
+  - {fileID: 2100000, guid: e067e9d867f14da43ba8388272b76097, type: 2}
+  - {fileID: 2100000, guid: 43515bce76e870748b6fc4e167819b1c, type: 2}
+  - {fileID: 2100000, guid: cd144194afbe78c4584f6e861036f024, type: 2}
+  letterDoor:
+  - {fileID: 2100000, guid: 3d36610588789434ea6a030fe3054956, type: 2}
+  - {fileID: 2100000, guid: 2591c1be6d922fd4fa9c185e7e744cec, type: 2}
+  - {fileID: 2100000, guid: 786c6a2ad8b80594d9671f274563f1ae, type: 2}
+  - {fileID: 2100000, guid: 49363525385c2804c922c2d2f1462bd4, type: 2}
+  - {fileID: 2100000, guid: cae22a9fa9b555b479abfcb21285a545, type: 2}
+  - {fileID: 2100000, guid: 1b3d8ca4284a836478c410508e14c876, type: 2}
 --- !u!1 &5906204201872626608
 GameObject:
   m_ObjectHideFlags: 0
