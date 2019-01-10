@@ -119,7 +119,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-44638
+  m_Name: pb_Mesh-14524
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -348,7 +348,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-44576
+  m_Name: pb_Mesh-14464
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -909,6 +909,16 @@ PrefabInstance:
       propertyPath: rotPanel
       value: 
       objectReference: {fileID: 1008598420}
+    - target: {fileID: 427153877497484051, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 427153877497484051, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: sensitivity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3009457483022268505, guid: 8919f05f26798eb40900456409e5a8ac,
         type: 3}
       propertyPath: ActionButton
@@ -938,6 +948,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonPressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500305709467904397, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500305709467904397, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: sensitivity
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8919f05f26798eb40900456409e5a8ac, type: 3}

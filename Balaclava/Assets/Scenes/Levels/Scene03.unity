@@ -419,7 +419,22 @@ PrefabInstance:
     - target: {fileID: 3169142348976359348, guid: fdd3f3ecd8a710d419f5c429e6ced800,
         type: 3}
       propertyPath: sensitivity
-      value: 2.5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3169142348976359348, guid: fdd3f3ecd8a710d419f5c429e6ced800,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840128621441363739, guid: fdd3f3ecd8a710d419f5c429e6ced800,
+        type: 3}
+      propertyPath: sensitivity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2840128621441363739, guid: fdd3f3ecd8a710d419f5c429e6ced800,
+        type: 3}
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd3f3ecd8a710d419f5c429e6ced800, type: 3}
