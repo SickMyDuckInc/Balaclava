@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WallsMat
+  m_Name: WallsWhiteMAt
   m_Shader: {fileID: 4800000, guid: a14c8d3b545742a4389cc93fa5befc7c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
