@@ -12,6 +12,7 @@ public class PanelDoorSymbolController : Panel
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<KeyGenerator>().GenerateKey();
         count = 0;
         numberIntroduce = 0;
         tries = 0;
