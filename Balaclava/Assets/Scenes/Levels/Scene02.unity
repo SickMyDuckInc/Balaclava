@@ -131,7 +131,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-11382
+  m_Name: pb_Mesh51566
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -589,7 +589,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-11372
+  m_Name: pb_Mesh52112
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -958,6 +958,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 6632402486425404787, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632402486425404787, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3651436072802898854, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: m_CastShadows
@@ -967,6 +977,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485541677724111034, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485541677724111034, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
@@ -981,7 +1001,12 @@ PrefabInstance:
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: sensitivity
-      value: 2.5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6710551208180977252, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
@@ -1022,6 +1047,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 727734671, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632402486425404558, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: sensitivity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632402486425404558, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
