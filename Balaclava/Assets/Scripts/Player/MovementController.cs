@@ -11,6 +11,8 @@ public class MovementController : PlayerController
 
     private Rigidbody rb;
 
+    AudioSource audioS;
+
     private bool enableMovement = true;
 
     // Use this for initialization
@@ -18,6 +20,7 @@ public class MovementController : PlayerController
      
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
+        audioS = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -29,8 +32,21 @@ public class MovementController : PlayerController
             translation = Input.GetAxis("Vertical") * speed;
             straffe = Input.GetAxis("Horizontal") * speed;
 
+            if(translation != 0)
+            {
+                if (!audioS.isPlaying)
+                {
+                    audioS.Play();
+                }
+            }
+            else
+            {
+                audioS.Pause();
+            }
+
             translation *= Time.deltaTime;
             straffe *= Time.deltaTime;
+
 
             transform.Translate(straffe, 0, translation);
             //rb.MovePosition(rb.position + (translation * Vector3.forward));
