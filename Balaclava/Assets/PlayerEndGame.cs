@@ -37,7 +37,7 @@ public class PlayerEndGame : MonoBehaviour
         }
     }
 
-    void endGame() {
+    public void endGame() {
         StartCoroutine(end());
     }
 
