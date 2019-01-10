@@ -117,8 +117,12 @@ public class EnemyController : Enemy
 
     public void endTurn()
     {
-        anim.SetFloat(walk, 1f);
-        agent.isStopped = false;
+        if (playerEnabledToSearch)
+        {
+            anim.SetFloat(walk, 1f);
+            agent.isStopped = false;
+        }
+        
     }
 
     /// <summary>
@@ -168,7 +172,9 @@ public class EnemyController : Enemy
         }
 
         target = waypoints.list[waypointIndex];
-        agent.SetDestination(target.position);       
+        NavMeshHit hit;
+        NavMesh.SamplePosition(target.position, out hit, 5.0f, NavMesh.AllAreas);
+        agent.SetDestination(hit.position);
     }
 
     void GetNextWayPointWithoutStop()

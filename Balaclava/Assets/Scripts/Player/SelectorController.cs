@@ -159,7 +159,7 @@ public class SelectorController : MonoBehaviour
     public void ReturnControl(GameObject selected)
     {
         selectable = false;
-        player.GetComponent<MovementController>().EnableMovement();
+        player.GetComponent<PlayerController>().EnableMovement();
 
         selected.GetComponentInChildren<Panel>().DisablePanel();
         player.GetComponent<Rigidbody>().useGravity = true;

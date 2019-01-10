@@ -10,6 +10,8 @@ TagManager:
   - KeyObject
   - FullDesk
   - DrawerObject
+  - MovementJoystick
+  - RotationJoystick
   layers:
   - Default
   - TransparentFX
