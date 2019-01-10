@@ -79,11 +79,7 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms:
-    - iPhone
-    - Standalone
-    - Android
-    - WebGL
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 1
@@ -237,7 +233,7 @@ QualitySettings:
     - Android
     - WebGL
   m_PerPlatformDefaultQuality:
-    Android: 2
-    Standalone: 2
+    Android: 1
+    Standalone: 1
     WebGL: 2
-    iPhone: 2
+    iPhone: 1
