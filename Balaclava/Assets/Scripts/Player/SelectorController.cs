@@ -168,7 +168,7 @@ public class SelectorController : MonoBehaviour
             player.GetComponent<Rigidbody>().useGravity = false;
             camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
             selectedObject.GetComponentInChildren<Panel>().EnablePanel();
-            camera.GetComponent<PlayerController>().DisableRotation(selectedObject);
+            player.GetComponent<PlayerController>().DisableRotation(selectedObject);
         }      
         if (door)
         {
