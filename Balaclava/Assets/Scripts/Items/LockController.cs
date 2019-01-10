@@ -19,6 +19,7 @@ public class LockController : Panel
     int actualNumber = 0;
 
     public List<AudioClip> badAudios;
+    public GameObject door;
 
     public int[] keyNumber = new int[4];
     private int index;
@@ -138,9 +139,12 @@ public class LockController : Panel
                 if (index >= keyNumber.Length)
                 {
                     Debug.Log("Has ganado");
+                    door.SetActive(false);
+                    GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().rewardPlayer();
                     transform.parent.gameObject.tag = "Untagged";
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<RotationController>().EnableRotation();
                     resolved = true;
+                    GetComponent<MeshRenderer>().enabled = false;
                 }
                 
             }
@@ -257,10 +261,13 @@ public class LockController : Panel
             if (index >= keyNumber.Length)
             {
                 Debug.Log("Has ganado");
+                door.SetActive(false);
+                GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().rewardPlayer();
                 transform.parent.gameObject.tag = "Untagged";
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().EnableRotation();
                 movementJoystick = null;
                 resolved = true;
+                GetComponent<MeshRenderer>().enabled = false;
             }
 
         }

@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class PlayerEndGame : MonoBehaviour
 {
 
-    public Image rewardImage;
-    public Image endGameImage;
+    public GameObject rewardImage;
+    public GameObject endGameImage;
 
     public int cofresPorNivel;
 
@@ -44,16 +44,16 @@ public class PlayerEndGame : MonoBehaviour
     IEnumerator reward()
     {
         //rewardImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        rewardImage.enabled = true;
+        rewardImage.SetActive(true);
         yield return new WaitForSeconds(2f);
-        rewardImage.enabled = false;
+        rewardImage.SetActive(false);
     }
 
     IEnumerator end() {
         //endGameImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        endGameImage.enabled = true;
+        endGameImage.SetActive(true);
         yield return new WaitForSeconds(2f);
-        endGameImage.enabled = false;
+        endGameImage.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Menu");
     }
