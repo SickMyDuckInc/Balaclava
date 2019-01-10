@@ -118,5 +118,6 @@ public class CountDown : MonoBehaviour
     private void GameOver()
     {
         //Debug.Log("JUEGO TERMINADO");
+        GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
     }
 }
