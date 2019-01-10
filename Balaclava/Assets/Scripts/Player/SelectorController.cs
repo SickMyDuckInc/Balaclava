@@ -35,8 +35,8 @@ public class SelectorController : MonoBehaviour
         if (camera == null)
             camera = GameObject.FindGameObjectWithTag("MainCamera");
 
-        //ActionButton.SetActive(false);
-        //HelpText.SetActive(false);
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
         drawerAnim = GameObject.FindGameObjectWithTag("FullDesk").GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
@@ -175,7 +175,7 @@ public class SelectorController : MonoBehaviour
     public void ReturnControl(GameObject selected)
     {
         selectable = false;
-        player.GetComponent<MovementController>().EnableMovement();
+        player.GetComponent<PlayerController>().EnableMovement();
 
         selected.GetComponentInChildren<Panel>().DisablePanel();
         player.GetComponent<Rigidbody>().useGravity = true;

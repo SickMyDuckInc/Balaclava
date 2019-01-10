@@ -6,9 +6,13 @@ public class FixedJoystick : Joystick
     Vector2 joystickPosition = Vector2.zero;
     private Camera cam = new Camera();
 
+    [HideInInspector]
+    public bool pressedJoystick;
+
     void Start()
     {
         joystickPosition = RectTransformUtility.WorldToScreenPoint(cam, background.position);
+        pressedJoystick = false;
     }
 
     public override void OnDrag(PointerEventData eventData)
@@ -21,11 +25,13 @@ public class FixedJoystick : Joystick
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        pressedJoystick = true;
         OnDrag(eventData);
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
+        pressedJoystick = false;
         inputVector = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
     }
