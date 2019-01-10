@@ -19,7 +19,7 @@ public class GuideOrPlayerManager : MonoBehaviour
 
     public void OpenUrldefined()
     {
-        Application.OpenURL("https://sickmyduckinc.github.io/Balaclava/");
+        Application.OpenURL("https://sickmyduckinc.github.io/BalaclavaManual/");
     }
     
     public void LevelSelector()

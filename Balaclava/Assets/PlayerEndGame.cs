@@ -56,5 +56,7 @@ public class PlayerEndGame : MonoBehaviour
         endGameImage.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Menu");
+        Cursor.lockState = CursorLockMode.None;
+
     }
 }

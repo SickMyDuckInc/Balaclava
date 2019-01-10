@@ -35,7 +35,7 @@ public class SelectorController : MonoBehaviour
 
     private void Start()
     {
-        Application.ExternalEval("OnAppReady()");
+        Application.ExternalCall("OnAppReady()");
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
         if (camera == null)
@@ -108,8 +108,11 @@ public class SelectorController : MonoBehaviour
             keySelected = false;
         }
 
-        ActionButton.SetActive(false);
-        HelpText.SetActive(false);
+        if (SpawnerPlayer.ISDEVICE)
+        {
+            ActionButton.SetActive(false);
+            HelpText.SetActive(false);
+        }        
     }
 
     private void Update()

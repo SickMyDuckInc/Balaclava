@@ -105,9 +105,10 @@ public class CountDown : MonoBehaviour
         {
             int minutes = (int)(gameTimer / 60) % 60;
             int seconds = (int)(gameTimer % 60);
-            if (minutes >= 1 && seconds > 30)
+            Debug.Log("Minutes and seconds = " + minutes + " , " + seconds);
+            if (minutes * 60 + seconds > 45f)
             {
-                gameTimer = 90f;
+                gameTimer = 45f;
             }
             Debug.Log("Llamamos a la policia");
             audioS.Play();

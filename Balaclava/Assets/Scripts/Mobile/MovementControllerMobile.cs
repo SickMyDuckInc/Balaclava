@@ -72,9 +72,9 @@ public class MovementControllerMobile : PlayerController {
 
             //Debug.Log("Pitch: " + pitch);
             //Debug.Log("Yaw: " + yaw);
-            
-            this.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up);
+
             camera.transform.localRotation = Quaternion.AngleAxis(pitch, Vector3.right);
+            this.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up);            
         }
     }
 
