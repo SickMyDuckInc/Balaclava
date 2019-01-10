@@ -30,6 +30,7 @@ public class SelectorController : MonoBehaviour
 
     private void Start()
     {
+        Application.ExternalEval("OnAppReady()");
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
         if (camera == null)
