@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PanelController : Panel
+public class PanelDoorSymbolController : Panel
 {
     public int key;
     private int numberIntroduce;
     private int count;
     private int tries;
+    public GameObject door;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class PanelController : Panel
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ButtonClicked(int button)
@@ -37,7 +38,7 @@ public class PanelController : Panel
                     Debug.Log("Exito");
                     //Abrir puerta o lo que sea
                     transform.parent.gameObject.tag = "Untagged";
-                    
+                    door.GetComponent<DoorController>().CheckDoor(true);
                     //Si no es un móvil
                     if (!SpawnerPlayer.ISDEVICE)
                     {
@@ -64,6 +65,6 @@ public class PanelController : Panel
                 }
             }
         }
-        
+
     }
 }

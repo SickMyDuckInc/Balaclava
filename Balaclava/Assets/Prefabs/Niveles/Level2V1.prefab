@@ -1048,6 +1048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8247684632919888481}
     m_Modifications:
+    - target: {fileID: 100000, guid: 964b79159914a0b4e858fe68f2b36c57, type: 3}
+      propertyPath: m_Name
+      value: walls2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 964b79159914a0b4e858fe68f2b36c57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1104,10 +1108,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 336.80078
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 964b79159914a0b4e858fe68f2b36c57, type: 3}
-      propertyPath: m_Name
-      value: walls2
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 964b79159914a0b4e858fe68f2b36c57, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1133,6 +1133,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8247684632919888481}
     m_Modifications:
+    - target: {fileID: 6601907196607750744, guid: bc1e385eba655794780d767e7701920b,
+        type: 3}
+      propertyPath: m_Name
+      value: WayPoints
+      objectReference: {fileID: 0}
     - target: {fileID: 6601907196607750745, guid: bc1e385eba655794780d767e7701920b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1187,11 +1192,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6601907196607750744, guid: bc1e385eba655794780d767e7701920b,
-        type: 3}
-      propertyPath: m_Name
-      value: WayPoints
       objectReference: {fileID: 0}
     - target: {fileID: 6601907195185752109, guid: bc1e385eba655794780d767e7701920b,
         type: 3}
