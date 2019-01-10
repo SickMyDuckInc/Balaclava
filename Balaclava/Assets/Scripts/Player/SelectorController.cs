@@ -118,6 +118,7 @@ public class SelectorController : MonoBehaviour
                 //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
                 if (selectable)
                 {
+                    selectedObject.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
                     player.GetComponent<MovementController>().DisableMovement();
                     player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
                     player.GetComponent<Rigidbody>().useGravity = false;
