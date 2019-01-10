@@ -14,32 +14,43 @@ public class AddController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void initiateBoxModel()
+    {
         value = 0;
-        for(int i = 0; i< symbols.Length; i++)
+        for (int i = 0; i < symbols.Length; i++)
         {
             value += symbols[i].GetComponent<Symbol>().value;
         }
         code = model.GetComponent<BoxModel>().code;
 
         int lastDigit = code % 10;
-        bool par = value % 2==0;
+        bool par = value % 2 == 0;
 
         if (lastDigit == 5)
         {
-            if(par)
+            if (par)
             {
-                key = 6867;
+                key = 6567;
             }
             else
             {
                 key = 2394;
             }
         }
-        else if(lastDigit == 3 && par)
+        else if (lastDigit == 3 && par)
         {
             key = 1107;
         }
-        else if(lastDigit == 9 && par)
+        else if (lastDigit == 9 && par)
         {
             key = 2209;
         }
@@ -49,11 +60,5 @@ public class AddController : MonoBehaviour
         }
 
         GetComponent<PanelController>().key = key;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

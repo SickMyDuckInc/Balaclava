@@ -735,8 +735,9 @@ GameObject:
   - component: {fileID: 1276249105}
   - component: {fileID: 1276249107}
   - component: {fileID: 7541518570015599659}
+  - component: {fileID: 8162645652663165263}
   m_Layer: 0
-  m_Name: SafeDoor
+  m_Name: SafeDoor555
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,6 +948,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8162645652663165263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452521992568125719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d30746555e6374faea213b0c77fc8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbolMaterial:
+  - {fileID: 2100000, guid: daa89fdaf716f5448a3fa9375ff5004a, type: 2}
+  - {fileID: 2100000, guid: ae057f13160896d40b926e8d6bbcb8c6, type: 2}
+  - {fileID: 2100000, guid: 5be8666cdd920f745b9997f1de108fb9, type: 2}
+  - {fileID: 2100000, guid: d2e2ac4cea862154881ba758ac35e131, type: 2}
+  codeMaterials:
+  - {fileID: 2100000, guid: 8e8b4b0eb591c3d4cb1a8fc47c661402, type: 2}
+  - {fileID: 2100000, guid: 098fbce9a1eb774478333e2eed1911f7, type: 2}
+  - {fileID: 2100000, guid: b43dfa43bb0c161448d8141ee66612ce, type: 2}
+  - {fileID: 2100000, guid: 135f9dca377cb254b9858399f9e2808d, type: 2}
+  - {fileID: 2100000, guid: f1a7813688cd18c4fba77bf336391b4c, type: 2}
+  - {fileID: 2100000, guid: 5b3ee6bbfcc756a4eaab339e41436385, type: 2}
 --- !u!1 &2482799577828045233
 GameObject:
   m_ObjectHideFlags: 0
