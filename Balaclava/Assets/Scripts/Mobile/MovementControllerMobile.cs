@@ -9,7 +9,6 @@ public class MovementControllerMobile : PlayerController {
     [Header("Movement values")]
     public float moveSpeed = 8f;
     [Header("Joystick elements")]
-    public GameObject MovementJoystick;
     public Joystick joystick;
 
     private bool enableMovement = true;
@@ -19,7 +18,6 @@ public class MovementControllerMobile : PlayerController {
     Vector2 JoystickLook;
 
     [Header("Joystick elements")]
-    public GameObject RotationPanel;
     public FixedTouchField rotPanel;
 
     public GameObject Hands;
@@ -33,7 +31,9 @@ public class MovementControllerMobile : PlayerController {
 
     private void Start()
     {
-        JoystickLook = new Vector2(camera.transform.eulerAngles.z, camera.transform.eulerAngles.y);
+        Debug.Log("Rotation mia = " + transform.eulerAngles);
+        Debug.Log("Rotation camara = " + camera.transform.eulerAngles);
+        JoystickLook = new Vector2(transform.localRotation.y, camera.transform.localRotation.z);
         audioS = GetComponent<AudioSource>();
     }
 
@@ -67,7 +67,8 @@ public class MovementControllerMobile : PlayerController {
             JoystickLook += smoothV;
             JoystickLook.y = Mathf.Clamp(JoystickLook.y, -90f, 90f);
 
-            this.transform.localRotation = Quaternion.AngleAxis(JoystickLook.x, Vector3.up);
+            this.transform.localRotation =  Quaternion.AngleAxis(JoystickLook.x, Vector3.up);
+            camera.transform.localRotation = Quaternion.LookRotation(transform.position, Vector3.up);
             camera.transform.localRotation = Quaternion.AngleAxis(-JoystickLook.y, Vector3.right);
         }
     }

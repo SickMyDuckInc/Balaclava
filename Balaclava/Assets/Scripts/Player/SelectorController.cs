@@ -107,7 +107,7 @@ public class SelectorController : MonoBehaviour
     {
         if (SpawnerPlayer.ISDEVICE)
         {
-            if (selectable)
+            if (selectable || door || keySelected && drawerOpen || drawer)
             {
                 if (!ActionButton.activeInHierarchy)
                 {
@@ -120,7 +120,6 @@ public class SelectorController : MonoBehaviour
             //Click izquierdo
             if (Input.GetMouseButtonDown(0))
             {
-
                 //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
                 if (selectable)
                 {
@@ -161,11 +160,34 @@ public class SelectorController : MonoBehaviour
 
     public void ButtonPressed()
     {
-        player.GetComponent<PlayerController>().DisableMovement();
-        player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
-        camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
-        selectedObject.GetComponentInChildren<Panel>().EnablePanel();
-        player.GetComponent<PlayerController>().DisableRotation(selectedObject);
+        if (selectable)
+        {
+            selectedObject.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
+            player.GetComponent<PlayerController>().DisableMovement();
+            player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
+            player.GetComponent<Rigidbody>().useGravity = false;
+            camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
+            selectedObject.GetComponentInChildren<Panel>().EnablePanel();
+            player.GetComponent<PlayerController>().DisableRotation(selectedObject);
+        }      
+        if (door)
+        {
+            doorObject.GetComponent<MeshRenderer>().material = oldMaterial;
+            doorObject.GetComponentInChildren<DoorController>().CheckDoor(key);
+        }
+        if (keySelected && drawerOpen)
+        {
+            key = true;
+            drawer = false;
+            Destroy(selectedObject);
+            keySelected = false;
+        }
+        if (drawer)
+        {
+            drawerAnim.SetTrigger("OpenDrawer");
+            selectedObject.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
+            drawerOpen = true;
+        }
 
         ActionButton.SetActive(false);
         HelpText.SetActive(true);
