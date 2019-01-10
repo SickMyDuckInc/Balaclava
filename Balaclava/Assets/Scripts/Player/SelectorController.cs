@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SelectorController : MonoBehaviour
@@ -25,6 +26,10 @@ public class SelectorController : MonoBehaviour
 
     public Animator drawerAnim;
 
+    //for device helpText
+    private const string CHECK_KEY = "Comprueba si hay una llave en el cajón";
+    private const string TAKED_KEY = "Llave cogida";
+    private const string INTRODUCE_KEY = "Introduce el codigo para desbloquear";
 
     private bool test = false;
 
@@ -102,6 +107,9 @@ public class SelectorController : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material = keyMat;
             keySelected = false;
         }
+
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
     }
 
     private void Update()
@@ -172,7 +180,9 @@ public class SelectorController : MonoBehaviour
             camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
             selectedObject.GetComponentInChildren<Panel>().EnablePanel();
             player.GetComponent<PlayerController>().DisableRotation(selectedObject);
-        }      
+            HelpText.SetActive(true);
+            HelpText.GetComponent<TextMeshProUGUI>().SetText(INTRODUCE_KEY);
+        }
         if (door)
         {
             doorObject.GetComponent<MeshRenderer>().material = oldMaterial;
@@ -184,16 +194,19 @@ public class SelectorController : MonoBehaviour
             drawer = false;
             Destroy(selectedObject);
             keySelected = false;
+            HelpText.SetActive(true);
+            HelpText.GetComponent<TextMeshProUGUI>().SetText(TAKED_KEY);
         }
         if (drawer)
         {
             drawerAnim.SetTrigger("OpenDrawer");
             selectedObject.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
             drawerOpen = true;
+            HelpText.SetActive(true);           
+            HelpText.GetComponent<TextMeshProUGUI>().SetText(CHECK_KEY);
         }
 
-        ActionButton.SetActive(false);
-        HelpText.SetActive(true);
+        ActionButton.SetActive(false);        
     } 
 
     public void ReturnControl(GameObject selected)

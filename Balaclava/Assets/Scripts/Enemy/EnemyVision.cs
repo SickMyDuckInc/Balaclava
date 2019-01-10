@@ -14,6 +14,7 @@ public class EnemyVision : MonoBehaviour
     RaycastHit hit;
 
     private bool isPlayerVisible;
+    private bool finish;
 
     //max distance of RayCast
     float maxDistance;
@@ -26,6 +27,7 @@ public class EnemyVision : MonoBehaviour
         maxDistance = GetComponent<BoxCollider>().size.z;
         layerMask = LayerMask.GetMask("Water");
         layerMask = ~layerMask;
+        finish = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,7 +38,7 @@ public class EnemyVision : MonoBehaviour
             return;
         }
 
-        if (other.gameObject.tag.Equals("Player") && em.playerEnabledToSearch)
+        if (other.gameObject.tag.Equals("Player") && em.playerEnabledToSearch && !finish)
         {
             Debug.Log("Player detected");
             playerDirection = other.gameObject.transform.position - securityGuardPosition.position;
@@ -48,6 +50,8 @@ public class EnemyVision : MonoBehaviour
                     other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
                     Debug.Log("VEO AL JUGADOR");
                     isPlayerVisible = true;
+                    finish = true;
+                    GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
                 }
             }
             else
@@ -66,7 +70,7 @@ public class EnemyVision : MonoBehaviour
             return;
         }
 
-        if (other.gameObject.tag.Equals("Player") && em.playerEnabledToSearch)
+        if (other.gameObject.tag.Equals("Player") && em.playerEnabledToSearch && !finish)
         {
             //Debug.Log("Player detected");
             playerDirection = other.gameObject.transform.position - securityGuardPosition.position;
@@ -77,6 +81,8 @@ public class EnemyVision : MonoBehaviour
                     Debug.Log("VEO AL JUGADOR");
                     other.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
                     isPlayerVisible = true;
+                    finish = true;
+                    GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
                 }
             }
             else

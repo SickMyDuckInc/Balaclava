@@ -113,13 +113,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: d28eeaff78429254c93c0489859e0766, type: 2}
+--- !u!114 &159642239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1075209985501135647, guid: 4ee69896ed3cbf54981ae2136e60204a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137140104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d141c5b192dce1b42baba37c7f867f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &237157712
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-110382
+  m_Name: pb_Mesh-162798
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -577,7 +589,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-110372
+  m_Name: pb_Mesh-162788
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -901,7 +913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 903538882, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 207770197, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
       propertyPath: m_havePropertiesChanged
@@ -980,12 +992,12 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1237250219}
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: rotPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 159642239}
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: sensitivity
@@ -1088,6 +1100,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7418931782433871736, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 866425140}
+    - target: {fileID: 7418931782433871736, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonPressed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
 --- !u!1 &1181258137
@@ -1159,6 +1181,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1237250219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1075209983591763601, guid: 4ee69896ed3cbf54981ae2136e60204a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1137140104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecce8d3f549de045bea5fd79de9e7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1674014538
 GameObject:
   m_ObjectHideFlags: 0

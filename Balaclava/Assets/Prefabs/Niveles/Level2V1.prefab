@@ -91,7 +91,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &903538886
 Transform:
@@ -683,16 +683,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1075209983591763601}
-    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
-        type: 3}
-      propertyPath: rotPanel
-      value: 
-      objectReference: {fileID: 1075209985501135647}
     - target: {fileID: 2347029917493553537, guid: 00d1e4417c51121499e5946eb1a30845,
         type: 3}
       propertyPath: ActionButton
@@ -703,6 +693,16 @@ PrefabInstance:
       propertyPath: HelpText
       value: 
       objectReference: {fileID: 1075209983841826445}
+    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1075209983591763601}
+    - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
+        type: 3}
+      propertyPath: rotPanel
+      value: 
+      objectReference: {fileID: 1075209985501135647}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d1e4417c51121499e5946eb1a30845, type: 3}
 --- !u!1 &8813117106691418983 stripped
@@ -1167,12 +1167,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9045073306478572849, guid: 807191f9e5448a940a2567278bd43ab8,
+    - target: {fileID: 9045073306478572847, guid: 807191f9e5448a940a2567278bd43ab8,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 9045073306478572847, guid: 807191f9e5448a940a2567278bd43ab8,
+    - target: {fileID: 9045073306478572849, guid: 807191f9e5448a940a2567278bd43ab8,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1192,10 +1192,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8247684632919888481}
     m_Modifications:
-    - target: {fileID: 832245006, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
-      propertyPath: m_Name
-      value: desk_with_Key
-      objectReference: {fileID: 0}
     - target: {fileID: 832245009, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.21546
@@ -1239,6 +1235,10 @@ PrefabInstance:
     - target: {fileID: 832245009, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832245006, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
+      propertyPath: m_Name
+      value: desk_with_Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
