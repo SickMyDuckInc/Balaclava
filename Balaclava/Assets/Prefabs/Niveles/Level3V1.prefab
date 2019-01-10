@@ -728,10 +728,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717344481003639089}
     m_Modifications:
-    - target: {fileID: 832245006, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
-      propertyPath: m_Name
-      value: desk_with_Key
-      objectReference: {fileID: 0}
     - target: {fileID: 832245009, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.303
@@ -783,6 +779,10 @@ PrefabInstance:
     - target: {fileID: 832245009, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 832245006, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
+      propertyPath: m_Name
+      value: desk_with_Key
       objectReference: {fileID: 0}
     - target: {fileID: 641329801, guid: 5b93de59c73241545950c7ab99e1b75f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2398,10 +2398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 717344481003639089}
     m_Modifications:
-    - target: {fileID: 100000, guid: fd97cf014e6bb514ebd192c5b90cfa41, type: 3}
-      propertyPath: m_Name
-      value: walls232
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd97cf014e6bb514ebd192c5b90cfa41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.8520985
@@ -2453,6 +2449,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: fd97cf014e6bb514ebd192c5b90cfa41, type: 3}
       propertyPath: m_LocalScale.z
       value: 336.92346
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd97cf014e6bb514ebd192c5b90cfa41, type: 3}
+      propertyPath: m_Name
+      value: walls232
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: fd97cf014e6bb514ebd192c5b90cfa41, type: 3}
       propertyPath: m_Materials.Array.data[0]
