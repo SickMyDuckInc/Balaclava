@@ -63,6 +63,7 @@ public class PanelDoorSymbolController : Panel
                     if (tries == 3)
                     {
                         Debug.Log("has perdido");
+                        GameObject.Find("PlayManager").GetComponent<PlayerEndGame>().endGame();
                     }
                     else
                     {

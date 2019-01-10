@@ -1031,6 +1031,11 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2348400635237856594, guid: 8919f05f26798eb40900456409e5a8ac,
+        type: 3}
+      propertyPath: gameTimer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8919f05f26798eb40900456409e5a8ac, type: 3}
 --- !u!114 &858588164 stripped

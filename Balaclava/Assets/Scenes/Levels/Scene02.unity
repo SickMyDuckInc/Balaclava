@@ -1110,6 +1110,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonPressed
       objectReference: {fileID: 0}
+    - target: {fileID: 142495259942409026, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: gameTimer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
 --- !u!1 &1181258137
