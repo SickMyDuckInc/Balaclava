@@ -47,10 +47,8 @@ public class CameraController : MonoBehaviour {
         }
         else
         {
-            print("diff: " + (Mathf.Abs(angle) - leftLimit));
             if (Mathf.Abs((Mathf.Abs(angle) - leftLimit)) > 2.0f)
             {
-                print("angle: " + Mathf.Abs(angle) + ", leftlimit: " + leftLimit);
                 transform.Rotate(Vector3.up * (-rotationSpeed * Time.deltaTime), Space.World);
             }
             else

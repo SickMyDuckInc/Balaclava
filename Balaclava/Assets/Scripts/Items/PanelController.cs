@@ -14,6 +14,7 @@ public class PanelController : Panel
         count = 0;
         numberIntroduce = 0;
         tries = 0;
+        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,11 +30,15 @@ public class PanelController : Panel
             count++;
             numberIntroduce *= 10;
             numberIntroduce += button;
+            audioS.clip = standardAudio;
+            audioS.Play();
 
             if (count == 4)
             {
                 if (numberIntroduce == key)
                 {
+                    audioS.clip = goodAudio;
+                    audioS.Play();
                     Debug.Log("Exito");
                     //Abrir puerta o lo que sea
                     transform.parent.gameObject.tag = "Untagged";
@@ -50,6 +55,8 @@ public class PanelController : Panel
                 }
                 else
                 {
+                    audioS.clip = badAudio;
+                    audioS.Play();
                     tries++;
                     if (tries == 3)
                     {
