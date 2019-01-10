@@ -131,7 +131,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-249780
+  m_Name: pb_Mesh-11382
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -589,7 +589,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-249764
+  m_Name: pb_Mesh-11372
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -981,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: sensitivity
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6710551208180977252, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
