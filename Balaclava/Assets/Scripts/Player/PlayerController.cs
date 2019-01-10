@@ -12,11 +12,22 @@ public abstract class PlayerController : MonoBehaviour
     public float smoothing = 2.0f;
 
     public virtual void EnableMovement() {
-
+        GameObject[] guardians = GameObject.FindGameObjectsWithTag("Enemy");
+        Debug.Log("Enable guards vision");
+        for (int i = 0; i < guardians.Length; ++i)
+        {
+            guardians[i].GetComponent<EnemyController>().enableSearch();
+        }
     }
     public virtual void DisableMovement()
     {
+        GameObject[] guardians = GameObject.FindGameObjectsWithTag("Enemy");
+        Debug.Log("Disable guards vision");
 
+        for (int i = 0; i < guardians.Length; ++i)
+        {
+            guardians[i].GetComponent<EnemyController>().disableSearch();
+        }
     }
     public abstract void EnableRotation();
     public abstract void DisableRotation(GameObject handSelected);

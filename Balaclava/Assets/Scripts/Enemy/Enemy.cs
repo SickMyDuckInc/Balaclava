@@ -8,6 +8,8 @@ public abstract class Enemy : MonoBehaviour
     //state
     protected enum states {Patrol, Arrest};
 
+    [HideInInspector]
+    public bool playerEnabledToSearch;
 
     //Constants animations
     protected int lookAround = Animator.StringToHash("LookAround");

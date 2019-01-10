@@ -10,6 +10,7 @@ public class EnemyController : Enemy
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerEnabledToSearch = true;
         //waypoints = new List<Point>(WaypointsManager.wp.waypoints.Count);
         waypoints = WaypointsManager.wp.GetSceneWaypoints(enemyIndex);
         waypointIndex = 0;
@@ -24,7 +25,6 @@ public class EnemyController : Enemy
     void FixedUpdate()
     {
         //Debug.DrawRay(this.transform.position, this.transform.forward*10, Color.red);
-
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
@@ -52,6 +52,20 @@ public class EnemyController : Enemy
                 }
             }
         }
+    }
+
+    public void disableSearch()
+    {
+        playerEnabledToSearch = false;
+        anim.SetFloat(walk, 0f);
+        agent.isStopped = true;
+    }
+
+    public void enableSearch()
+    {
+        playerEnabledToSearch = true;
+        anim.SetFloat(walk, 1f);
+        agent.isStopped = false;
     }
 
     #region StateMachineFunctions

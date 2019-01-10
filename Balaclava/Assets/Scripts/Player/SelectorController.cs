@@ -90,11 +90,6 @@ public class SelectorController : MonoBehaviour
             other.gameObject.GetComponent<MeshRenderer>().material = keyMat;
             keySelected = false;
         }
-        if (SpawnerPlayer.ISDEVICE)
-        {
-            ActionButton.SetActive(false);
-            HelpText.SetActive(false);
-        }
     }
 
     private void Update()
@@ -133,6 +128,7 @@ public class SelectorController : MonoBehaviour
                 if (keySelected && drawerOpen)
                 {
                     key = true;
+                    drawer = false;
                     Destroy(selectedObject);
                     keySelected = false;
                 }

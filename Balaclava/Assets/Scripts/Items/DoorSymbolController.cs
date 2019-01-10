@@ -70,6 +70,11 @@ public class DoorSymbolController : MonoBehaviour
             {
                 key = value + value * 100;
             }
+            else if (tens == 3)
+            {
+                key = value * 10;
+
+            }
             else if (tens == 1)
             {
                 key = value + value * 10 + value * 100 + value * 1000;
@@ -93,7 +98,7 @@ public class DoorSymbolController : MonoBehaviour
     private int Dozens(int number)
     {
         int i = 0;
-        while(number%10 != 0)
+        while(number != 0 || number%10 != 0)
         {
             number = number / 10;
             i++;
