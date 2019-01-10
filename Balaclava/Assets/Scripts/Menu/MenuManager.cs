@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour {
 
     public void StartScreen()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("GuideOrPlayer");
     }
 
     public void ConfigScreen()
@@ -28,4 +28,6 @@ public class MenuManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Credits");
     }
+
+    
 }
