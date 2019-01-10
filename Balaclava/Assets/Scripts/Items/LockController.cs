@@ -11,9 +11,7 @@ public class LockController : Panel
     int actualNumber = 0;
 
     public List<AudioClip> badAudios;
-    public AudioClip goodAudio;
 
-    private AudioSource audioS;
     public int[] keyNumber = new int[4];
     private int index;
     // Start is called before the first frame update
