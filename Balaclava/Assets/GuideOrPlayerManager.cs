@@ -24,11 +24,11 @@ public class GuideOrPlayerManager : MonoBehaviour
     
     public void LevelSelector()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("LevelSelector");
     }
 
     public void Back()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 }

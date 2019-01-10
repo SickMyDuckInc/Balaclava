@@ -19,6 +19,11 @@ public class LevelSelectorManager : MonoBehaviour
 
     public void LevelSelector(int level)
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene("Scene0" + level);
+    }
+
+    public void GoBackToMenu()
+    {
+        SceneManager.LoadScene("GuideOrPlayer");
     }
 }
