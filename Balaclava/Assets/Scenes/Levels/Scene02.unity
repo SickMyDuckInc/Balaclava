@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,25 +113,13 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: d28eeaff78429254c93c0489859e0766, type: 2}
---- !u!114 &31678844 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6710551209230296109, guid: 4ee69896ed3cbf54981ae2136e60204a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1137140104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d141c5b192dce1b42baba37c7f867f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &237157712
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51566
+  m_Name: pb_Mesh-110382
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -589,7 +577,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52112
+  m_Name: pb_Mesh-110372
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -913,7 +901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 903538882, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 207770197, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
       propertyPath: m_havePropertiesChanged
@@ -992,12 +980,12 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 1523447547}
+      objectReference: {fileID: 0}
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: rotPanel
       value: 
-      objectReference: {fileID: 31678844}
+      objectReference: {fileID: 0}
     - target: {fileID: 917714890166181573, guid: 4ee69896ed3cbf54981ae2136e60204a,
         type: 3}
       propertyPath: sensitivity
@@ -1061,6 +1049,44 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 883673668, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 881415300, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf50a916c2ab7c342a4dd719b39203e5, type: 2}
+    - target: {fileID: 6407531749896534892, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407531749896534892, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646400647947449628, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646400647947449628, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768047529048464701, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768047529048464701, guid: 4ee69896ed3cbf54981ae2136e60204a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee69896ed3cbf54981ae2136e60204a, type: 3}
@@ -1133,18 +1159,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1523447547 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6681271683762363254, guid: 4ee69896ed3cbf54981ae2136e60204a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1137140104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cecce8d3f549de045bea5fd79de9e7cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1674014538
 GameObject:
   m_ObjectHideFlags: 0
