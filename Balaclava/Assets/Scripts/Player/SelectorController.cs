@@ -30,6 +30,7 @@ public class SelectorController : MonoBehaviour
 
     private void Start()
     {
+        Application.ExternalEval("OnAppReady()");
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
         if (camera == null)
@@ -127,6 +128,7 @@ public class SelectorController : MonoBehaviour
                     player.GetComponent<MovementController>().DisableMovement();
                     player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
                     player.GetComponent<Rigidbody>().useGravity = false;
+                    player.GetComponent<AudioSource>().Pause();
                     camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
                     selectedObject.GetComponentInChildren<Panel>().EnablePanel();
                     camera.GetComponent<RotationController>().DisableRotation(selectedObject);
@@ -166,6 +168,7 @@ public class SelectorController : MonoBehaviour
             player.GetComponent<PlayerController>().DisableMovement();
             player.transform.position = selectedObject.GetComponent<PlayerPosition>().playerPosition;
             player.GetComponent<Rigidbody>().useGravity = false;
+            player.GetComponent<AudioSource>().Pause();
             camera.transform.rotation = Quaternion.Euler(selectedObject.GetComponent<PlayerPosition>().playerRotation);
             selectedObject.GetComponentInChildren<Panel>().EnablePanel();
             player.GetComponent<PlayerController>().DisableRotation(selectedObject);

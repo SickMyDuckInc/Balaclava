@@ -14,14 +14,14 @@ public class LightController : MonoBehaviour
     {
         new string[]{"red","yellow","blue"},
         new string[]{"red"},
-        new string[]{"red","red"},
-        new string[]{"yellow"},
-        new string[]{"yellow","yellow"},
         new string[]{"blue"},
-        new string[]{"blue", "blue"},
+        new string[]{"red","red"},
+        new string[]{"yellow","yellow"},
         new string[]{"red","yellow"},
-        new string[]{"blue","red"},
-        new string[]{"yellow","blue"}
+        new string[]{"blue", "red"},
+        new string[]{"yellow"},
+        new string[]{"yellow","blue"},
+        new string[]{"blue","blue"}
     };
 
 

@@ -26,6 +26,10 @@ public class KeyGenerator : MonoBehaviour
         {
             GenerateKey(10);
         }
+        else if(this.name == "panel56")
+        {
+            GeneratekeyLights();
+        }
 
     }
 
@@ -52,5 +56,20 @@ public class KeyGenerator : MonoBehaviour
         }
 
         GetComponent<LockController>().keyNumber = totalKey;
+    }
+
+    private void GeneratekeyLights()
+    {
+        int key = Random.Range(0, 10);
+        LightController light = GetComponent<LightController>();
+        light.key[0] = key;
+        for(int i = 1; i<4; i++)
+        {
+            int rand = Random.Range(0, 10);
+            light.key[i] = rand;
+            key = key * 10 + rand; 
+        }
+        GetComponent<PanelController>().key = key;
+        //GetComponent<LightController>().key[0] 
     }
 }

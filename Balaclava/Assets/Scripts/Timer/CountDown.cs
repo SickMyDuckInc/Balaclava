@@ -17,6 +17,8 @@ public class CountDown : MonoBehaviour
     public bool callPolice;
     private bool gameOver;
 
+    AudioSource audioS;
+
     string t = "Timer: ";
     string s = ":";
 
@@ -24,6 +26,7 @@ public class CountDown : MonoBehaviour
     void Start()
     {
         cd = this;
+        audioS = GetComponent<AudioSource>();
 
         gameTimer *= 60;
         callPolice = false;
@@ -107,6 +110,7 @@ public class CountDown : MonoBehaviour
                 gameTimer = 90f;
             }
             Debug.Log("Llamamos a la policia");
+            audioS.Play();
             callPolice = true;
         }        
     }
