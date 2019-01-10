@@ -11,8 +11,13 @@ public abstract class PlayerController : MonoBehaviour
     public float sensitivity = 5.0f;
     public float smoothing = 2.0f;
 
-    public abstract void EnableMovement();
-    public abstract void DisableMovement();
+    public virtual void EnableMovement() {
+
+    }
+    public virtual void DisableMovement()
+    {
+
+    }
     public abstract void EnableRotation();
     public abstract void DisableRotation(GameObject handSelected);
 }

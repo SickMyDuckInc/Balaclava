@@ -7,6 +7,7 @@
 		_BumpMap("Normal Map", 2D) = "bump" {}
 		_SpecColor("Specular Color", Color) = (0.5, 0.5, 0.5, 1)
 		_Shininess("Shininess", Range(0.03, 1)) = 0.078125
+		_NormalStrength("NormalStrength", Range(0, 2)) = 0.078125
     }
     SubShader
     {
@@ -15,7 +16,7 @@
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf BlinnPhong
+        #pragma surface surf BlinnPhong fullforwardshadows
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -23,6 +24,7 @@
         sampler2D _MainTex;
 		sampler2D _BumpMap;
 		half _Shininess;
+		half _NormalStrength;
 
         struct Input
         {
@@ -48,7 +50,12 @@
 			o.Specular = _Shininess * specTex.g;
             o.Albedo = c.rgb;
             // Metallic and smoothness come from slider variables
-			o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+			fixed3 Dmg = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+
+			Dmg.xy *= _NormalStrength;
+
+			o.Normal = normalize(Dmg);
+
             o.Alpha = c.a;
         }
         ENDCG

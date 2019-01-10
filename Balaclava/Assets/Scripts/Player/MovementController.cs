@@ -44,13 +44,17 @@ public class MovementController : PlayerController
 
     public override void EnableMovement()
     {
+        base.EnableMovement();
         enableMovement = true;
+        rb.isKinematic = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     public override void DisableMovement()
     {
+        base.DisableMovement();
         enableMovement = false;
+        rb.isKinematic = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
