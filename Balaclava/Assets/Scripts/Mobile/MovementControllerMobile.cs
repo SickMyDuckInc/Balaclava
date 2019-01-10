@@ -9,6 +9,7 @@ public class MovementControllerMobile : PlayerController {
     [Header("Movement values")]
     public float moveSpeed = 8f;
     [Header("Joystick elements")]
+    public GameObject MovementJoystick;
     public Joystick joystick;
 
     private bool enableMovement = true;
@@ -18,22 +19,22 @@ public class MovementControllerMobile : PlayerController {
     Vector2 JoystickLook;
 
     [Header("Joystick elements")]
+    public GameObject RotationPanel;
     public FixedTouchField rotPanel;
 
     public GameObject Hands;
     private GameObject handSelected;
 
-    private Rigidbody rb;
-
     public GameObject camera;
+
+    private AudioSource audioS;
 
     private bool enableRotation = true;
 
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        JoystickLook = new Vector2(transform.rotation.z, transform.rotation.y);
-        rb = GetComponent<Rigidbody>();
+        JoystickLook = new Vector2(camera.transform.eulerAngles.z, camera.transform.eulerAngles.y);
+        audioS = GetComponent<AudioSource>();
     }
 
     void FixedUpdate () 
@@ -45,6 +46,14 @@ public class MovementControllerMobile : PlayerController {
             if (moveVector != Vector3.zero)
             {
                 transform.Translate(moveVector * moveSpeed * Time.deltaTime);
+                if (!audioS.isPlaying)
+                {
+                    audioS.Play();
+                }
+            }
+            else
+            {
+                audioS.Pause();
             }
         }
 
@@ -67,16 +76,12 @@ public class MovementControllerMobile : PlayerController {
     {
         base.DisableMovement();
         enableMovement = false;
-        rb.isKinematic = true;
-        //Cursor.lockState = CursorLockMode.None;
     }
 
     public override void EnableMovement()
     {
         base.EnableMovement();
         enableMovement = true;
-        rb.isKinematic = false;
-        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     public override void EnableRotation()

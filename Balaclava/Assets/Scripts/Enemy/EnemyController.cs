@@ -7,9 +7,12 @@ public class EnemyController : Enemy
 {
     states myState = states.Patrol;
 
+    AudioSource audioS;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioS = GetComponent<AudioSource>();
         playerEnabledToSearch = true;
         //waypoints = new List<Point>(WaypointsManager.wp.waypoints.Count);
         waypoints = WaypointsManager.wp.GetSceneWaypoints(enemyIndex);
@@ -19,6 +22,7 @@ public class EnemyController : Enemy
         NavMesh.SamplePosition(target.position, out hit, 5.0f, NavMesh.AllAreas);
         agent.SetDestination(hit.position);
         anim.SetFloat(walk, 1f);
+        audioS.Play();
     }
 
 
@@ -36,6 +40,10 @@ public class EnemyController : Enemy
                         if (myState.Equals(states.Patrol))
                         {
                             anim.SetFloat(walk, 0f);
+                            if (audioS.isPlaying)
+                            {
+                                audioS.Pause();
+                            }
                             anim.SetBool(lookAround, true);
                             GetNextWaypoint();
                         }
@@ -43,6 +51,10 @@ public class EnemyController : Enemy
                         {
                             //stay in idle next to the player and ends the game
                             anim.SetFloat(walk, 0f);
+                            if (audioS.isPlaying)
+                            {
+                                audioS.Pause();
+                            }
                         }
                     }
                     else
@@ -58,6 +70,10 @@ public class EnemyController : Enemy
     {
         playerEnabledToSearch = false;
         anim.SetFloat(walk, 0f);
+        if (audioS.isPlaying)
+        {
+            audioS.Pause();
+        }
         agent.isStopped = true;
     }
 
@@ -65,6 +81,10 @@ public class EnemyController : Enemy
     {
         playerEnabledToSearch = true;
         anim.SetFloat(walk, 1f);
+        if (!audioS.isPlaying)
+        {
+            audioS.Play();
+        }
         agent.isStopped = false;
     }
 
@@ -120,6 +140,10 @@ public class EnemyController : Enemy
         if (playerEnabledToSearch)
         {
             anim.SetFloat(walk, 1f);
+            if (!audioS.isPlaying)
+            {
+                audioS.Play();
+            }
             agent.isStopped = false;
         }
         
