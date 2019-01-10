@@ -12,6 +12,8 @@ public class KeyGenerator : MonoBehaviour
     };
     public Material[] symbolMaterial = new Material[4];
     public Material[] codeMaterials = new Material[6];
+    public Material[] symbolsDoor = new Material[28];
+    public Material[] letterDoor = new Material[6];
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,10 @@ public class KeyGenerator : MonoBehaviour
         else if(this.name == "SafeDoor555")
         {
             GenerateKeySymbolBox();
+        }
+        else if(this.name == "panelSymbol")
+        {
+            GenerateKeyPanelSymbol();
         }
 
     }
@@ -110,6 +116,11 @@ public class KeyGenerator : MonoBehaviour
         add.model.GetComponent<Renderer>().material = codeMaterials[cod];
 
         add.initiateBoxModel();
+
+    }
+
+    private void GenerateKeyPanelSymbol()
+    {
 
     }
 }
