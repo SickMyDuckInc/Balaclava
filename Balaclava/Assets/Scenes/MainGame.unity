@@ -119,7 +119,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14640
+  m_Name: pb_Mesh-14268
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -996,6 +996,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1763446635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &933643372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 543326504, guid: f22c74de1a05c4540881de0d756d4483,
+    type: 3}
+  m_PrefabInstance: {fileID: 1763446635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933643370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecce8d3f549de045bea5fd79de9e7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981589905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1289,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14008
+  m_Name: pb_Mesh-13636
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1556,11 +1568,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1797711208016567233, guid: 4db39686293b34844b590204ecb0cfba,
-        type: 3}
-      propertyPath: m_Name
-      value: camerafija
-      objectReference: {fileID: 0}
     - target: {fileID: 7543061432829804814, guid: 4db39686293b34844b590204ecb0cfba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1615,6 +1622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797711208016567233, guid: 4db39686293b34844b590204ecb0cfba,
+        type: 3}
+      propertyPath: m_Name
+      value: camerafija
       objectReference: {fileID: 0}
     - target: {fileID: 7469207742753145397, guid: 4db39686293b34844b590204ecb0cfba,
         type: 3}
@@ -1804,6 +1816,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1763446635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1654641610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1445842086, guid: f22c74de1a05c4540881de0d756d4483,
+    type: 3}
+  m_PrefabInstance: {fileID: 1763446635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654641608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d141c5b192dce1b42baba37c7f867f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1700698917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1870,6 +1894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597846951099731365, guid: aeecb9de3c248f34a98ea13b3f7a8589,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeecb9de3c248f34a98ea13b3f7a8589, type: 3}
@@ -2464,7 +2493,7 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 933643372}
     - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
         type: 3}
       propertyPath: RotationPanel
@@ -2474,7 +2503,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rotPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1654641610}
     - target: {fileID: 917714890744857291, guid: 00d1e4417c51121499e5946eb1a30845,
         type: 3}
       propertyPath: sensitivity

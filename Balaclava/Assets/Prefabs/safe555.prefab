@@ -850,6 +850,7 @@ MonoBehaviour:
   goodAudio: {fileID: 8300000, guid: e582d60129d5d714db1acb27951992db, type: 3}
   badAudio: {fileID: 8300000, guid: 9dd5802b3b37f4045af8bcf045f4d618, type: 3}
   key: 0
+  door: {fileID: 2482799577828045233}
 --- !u!82 &7541518570015599659
 AudioSource:
   m_ObjectHideFlags: 0
