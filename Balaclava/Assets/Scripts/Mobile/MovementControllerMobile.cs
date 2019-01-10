@@ -35,8 +35,6 @@ public class MovementControllerMobile : PlayerController {
 
     private void Start()
     {
-        //Debug.Log("Rotation mia = " + transform.rotation);
-        //Debug.Log("Rotation camara = " + camera.transform.rotation);
         JoystickLook = new Vector2(transform.localRotation.y,camera.transform.localRotation.x);
         audioS = GetComponent<AudioSource>();
 
@@ -72,8 +70,8 @@ public class MovementControllerMobile : PlayerController {
             pitch = Mathf.Clamp(pitch, -90f, 90f);
             yaw += md.x;
 
-            Debug.Log("Pitch: " + pitch);
-            Debug.Log("Yaw: " + yaw);
+            //Debug.Log("Pitch: " + pitch);
+            //Debug.Log("Yaw: " + yaw);
             
             this.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up);
             camera.transform.localRotation = Quaternion.AngleAxis(pitch, Vector3.right);
