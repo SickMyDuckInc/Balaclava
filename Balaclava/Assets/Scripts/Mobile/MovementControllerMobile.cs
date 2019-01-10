@@ -29,15 +29,22 @@ public class MovementControllerMobile : PlayerController {
 
     private bool enableRotation = true;
 
+    //VARIABLES DE PRUEBA
+    private float pitch;
+    private float yaw;
+
     private void Start()
     {
-        Debug.Log("Rotation mia = " + transform.eulerAngles);
-        Debug.Log("Rotation camara = " + camera.transform.eulerAngles);
-        JoystickLook = new Vector2(transform.localRotation.y, camera.transform.localRotation.z);
+        //Debug.Log("Rotation mia = " + transform.rotation);
+        //Debug.Log("Rotation camara = " + camera.transform.rotation);
+        JoystickLook = new Vector2(transform.localRotation.y,camera.transform.localRotation.x);
         audioS = GetComponent<AudioSource>();
+
+        pitch = camera.transform.eulerAngles.x;
+        yaw = this.transform.eulerAngles.y;
     }
 
-    void FixedUpdate () 
+    void LateUpdate () 
 	{
         if (enableMovement)
         {
@@ -61,15 +68,15 @@ public class MovementControllerMobile : PlayerController {
 
         if (md != Vector2.zero && enableRotation)
         {
-            md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
-            smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
-            smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
-            JoystickLook += smoothV;
-            JoystickLook.y = Mathf.Clamp(JoystickLook.y, -90f, 90f);
+            pitch -= md.y;
+            pitch = Mathf.Clamp(pitch, -90f, 90f);
+            yaw += md.x;
 
-            this.transform.localRotation =  Quaternion.AngleAxis(JoystickLook.x, Vector3.up);
-            camera.transform.localRotation = Quaternion.LookRotation(transform.position, Vector3.up);
-            camera.transform.localRotation = Quaternion.AngleAxis(-JoystickLook.y, Vector3.right);
+            Debug.Log("Pitch: " + pitch);
+            Debug.Log("Yaw: " + yaw);
+            
+            this.transform.localRotation = Quaternion.AngleAxis(yaw, Vector3.up);
+            camera.transform.localRotation = Quaternion.AngleAxis(pitch, Vector3.right);
         }
     }
 
