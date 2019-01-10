@@ -200,7 +200,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-44374
+  m_Name: pb_Mesh-731814
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -354,24 +354,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &303478922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4097404312065442375, guid: ebae349c2099011488b7c04497979bc3,
-    type: 3}
-  m_PrefabInstance: {fileID: 656957600}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &303478924 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4097404312065442373, guid: ebae349c2099011488b7c04497979bc3,
-    type: 3}
-  m_PrefabInstance: {fileID: 656957600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303478922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d141c5b192dce1b42baba37c7f867f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &446177508
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,45 +489,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4097404310909588841, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1426051815, guid: ebae349c2099011488b7c04497979bc3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650206090270865650, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: RotationPanel
-      value: 
-      objectReference: {fileID: 303478922}
-    - target: {fileID: 8650206090270865650, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: MovementJoystick
-      value: 
-      objectReference: {fileID: 793661322}
-    - target: {fileID: 8650206090270865650, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 793661324}
-    - target: {fileID: 8650206090270865650, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: rotPanel
-      value: 
-      objectReference: {fileID: 303478924}
-    - target: {fileID: 4097404312065442375, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: m_TagString
-      value: RotationJoystick
-      objectReference: {fileID: 0}
-    - target: {fileID: 4096396685541517064, guid: ebae349c2099011488b7c04497979bc3,
-        type: 3}
-      propertyPath: m_TagString
-      value: MovementJoystick
       objectReference: {fileID: 0}
     - target: {fileID: 4097404311001098252, guid: ebae349c2099011488b7c04497979bc3,
         type: 3}
@@ -727,24 +670,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &793661322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4096396685541517064, guid: ebae349c2099011488b7c04497979bc3,
-    type: 3}
-  m_PrefabInstance: {fileID: 656957600}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &793661324 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4126678746015333662, guid: ebae349c2099011488b7c04497979bc3,
-    type: 3}
-  m_PrefabInstance: {fileID: 656957600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793661322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cecce8d3f549de045bea5fd79de9e7cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &822171180
 GameObject:
   m_ObjectHideFlags: 0
