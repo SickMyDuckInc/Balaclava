@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectorController : MonoBehaviour
 {
     public Material iluminated;
+    public Material redOne;
     public Material keyMat;
     Material oldMaterial;
     bool selectable = false;
@@ -63,6 +64,17 @@ public class SelectorController : MonoBehaviour
         else if (other.gameObject.tag == "DoorObject")
         {
             door = true;
+            
+            oldMaterial = other.gameObject.GetComponent<MeshRenderer>().material;
+            if (key)
+            {
+                other.gameObject.GetComponent<MeshRenderer>().material = iluminated;
+            }
+            else
+            {
+                other.gameObject.GetComponent<MeshRenderer>().material = redOne;
+            }
+            
             doorObject = other.gameObject;
         }
 
@@ -78,6 +90,7 @@ public class SelectorController : MonoBehaviour
         }
         else if(other.gameObject.tag == "DoorObject")
         {
+            other.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
             door = false;
         }
         else if(other.gameObject.tag == "DrawerObject" && !drawerOpen)
@@ -123,6 +136,7 @@ public class SelectorController : MonoBehaviour
                 }
                 if (door)
                 {
+                    doorObject.GetComponent<MeshRenderer>().material = oldMaterial;
                     doorObject.GetComponentInChildren<DoorController>().CheckDoor(key);
                 }
                 if (keySelected && drawerOpen)
