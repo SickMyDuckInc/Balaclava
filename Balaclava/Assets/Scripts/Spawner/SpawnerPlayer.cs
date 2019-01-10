@@ -21,7 +21,7 @@ public class SpawnerPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string operatingSystem = SystemInfo.operatingSystem;
+        /*string operatingSystem = SystemInfo.operatingSystem;
 
         if (operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_ANDROID) || operatingSystem.ToLower().Contains(DEFAULT_OPERATING_SYSTEM_APPLE))
         {
@@ -35,6 +35,8 @@ public class SpawnerPlayer : MonoBehaviour
             Debug.Log("SpawnPlayer Windows");
             MovementJoystick.SetActive(false);
             RotationJoystick.SetActive(false);
+            ActionButton.SetActive(false);
+            HelpText.SetActive(false);
             WindowsPlayerPrefab.SetActive(true);
             Destroy(MobilePlayerPrefab);
             ISDEVICE = false;
@@ -42,11 +44,13 @@ public class SpawnerPlayer : MonoBehaviour
 
         //Hide always at start
         ActionButton.SetActive(false);
-        HelpText.SetActive(false);
+        HelpText.SetActive(false);*/
 
-        /*MobilePlayerPrefab.SetActive(true);
+        MobilePlayerPrefab.SetActive(true);
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
         Destroy(WindowsPlayerPrefab);
-        ISDEVICE = true;*/
+        ISDEVICE = true;
     }
 
 }
