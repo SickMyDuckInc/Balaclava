@@ -35,8 +35,6 @@ public class SelectorController : MonoBehaviour
         if (camera == null)
             camera = GameObject.FindGameObjectWithTag("MainCamera");
 
-        ActionButton.SetActive(false);
-        HelpText.SetActive(false);
         drawerAnim = GameObject.FindGameObjectWithTag("FullDesk").GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)

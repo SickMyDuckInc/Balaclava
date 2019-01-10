@@ -27,11 +27,14 @@ public class MovementControllerMobile : PlayerController {
 
     public GameObject camera;
 
+    private AudioSource audioS;
+
     private bool enableRotation = true;
 
     private void Start()
     {
         JoystickLook = new Vector2(camera.transform.eulerAngles.z, camera.transform.eulerAngles.y);
+        audioS = GetComponent<AudioSource>();
     }
 
     void FixedUpdate () 
@@ -43,6 +46,14 @@ public class MovementControllerMobile : PlayerController {
             if (moveVector != Vector3.zero)
             {
                 transform.Translate(moveVector * moveSpeed * Time.deltaTime);
+                if (!audioS.isPlaying)
+                {
+                    audioS.Play();
+                }
+            }
+            else
+            {
+                audioS.Pause();
             }
         }
 

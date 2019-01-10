@@ -35,6 +35,8 @@ public class SpawnerPlayer : MonoBehaviour
             Debug.Log("SpawnPlayer Windows");
             MovementJoystick.SetActive(false);
             RotationJoystick.SetActive(false);
+            ActionButton.SetActive(false);
+            HelpText.SetActive(false);
             WindowsPlayerPrefab.SetActive(true);
             Destroy(MobilePlayerPrefab);
             ISDEVICE = false;
@@ -45,6 +47,8 @@ public class SpawnerPlayer : MonoBehaviour
         HelpText.SetActive(false);
 
         /*MobilePlayerPrefab.SetActive(true);
+        ActionButton.SetActive(false);
+        HelpText.SetActive(false);
         Destroy(WindowsPlayerPrefab);
         ISDEVICE = true;*/
     }
