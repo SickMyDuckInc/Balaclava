@@ -5,11 +5,14 @@ using UnityEngine;
 public class SelectorController : MonoBehaviour
 {
     public Material iluminated;
+    public Material keyMat;
     Material oldMaterial;
     bool selectable = false;
     bool key = false;
     bool door = false;
+    bool drawer = false;
     bool keySelected = false;
+    bool drawerOpen = false;
     public GameObject player;
     public GameObject camera;
     //action button
@@ -18,6 +21,8 @@ public class SelectorController : MonoBehaviour
 
     private GameObject selectedObject;
     private GameObject doorObject;
+
+    public Animator drawerAnim;
 
 
     private bool test = false;
@@ -29,16 +34,21 @@ public class SelectorController : MonoBehaviour
         if (camera == null)
             camera = GameObject.FindGameObjectWithTag("MainCamera");
 
-        ActionButton.SetActive(false);
-        HelpText.SetActive(false);
+        //ActionButton.SetActive(false);
+        //HelpText.SetActive(false);
+        drawerAnim = GameObject.FindGameObjectWithTag("FullDesk").GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "SelectableObject" || other.gameObject.tag == "KeyObject")
+        if (other.gameObject.tag == "SelectableObject" || (other.gameObject.tag == "KeyObject" && drawerOpen) || (other.gameObject.tag == "DrawerObject" && !drawerOpen))
         {
-            if (other.gameObject.tag == "KeyObject")
+            if (other.gameObject.tag == "KeyObject" && drawerOpen)
             {
                 keySelected = true;
+            }
+            else if(other.gameObject.tag == "DrawerObject" && !drawerOpen)
+            {
+                drawer = true;
             }
             else
             {
@@ -70,6 +80,16 @@ public class SelectorController : MonoBehaviour
         {
             door = false;
         }
+        else if(other.gameObject.tag == "DrawerObject" && !drawerOpen)
+        {
+            other.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
+            drawer = false;
+        }
+        else if(other.gameObject.tag == "KeyObject" && drawerOpen)
+        {
+            other.gameObject.GetComponent<MeshRenderer>().material = keyMat;
+            keySelected = false;
+        }
         if (SpawnerPlayer.ISDEVICE)
         {
             ActionButton.SetActive(false);
@@ -92,7 +112,7 @@ public class SelectorController : MonoBehaviour
         else
         {
             //Click izquierdo
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
 
                 //player.transform.position = new Vector3(5.76f, 0.56f, 3f);
@@ -109,11 +129,17 @@ public class SelectorController : MonoBehaviour
                 {
                     doorObject.GetComponentInChildren<DoorController>().CheckDoor(key);
                 }
-                if (keySelected)
+                if (keySelected && drawerOpen)
                 {
                     key = true;
                     Destroy(selectedObject);
                     keySelected = false;
+                }
+                if (drawer)
+                {
+                    drawerAnim.SetTrigger("OpenDrawer");
+                    selectedObject.gameObject.GetComponent<MeshRenderer>().material = oldMaterial;
+                    drawerOpen = true;
                 }
                 if (test)
                 {

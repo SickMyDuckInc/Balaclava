@@ -8,6 +8,8 @@ TagManager:
   - SelectableObject
   - DoorObject
   - KeyObject
+  - FullDesk
+  - DrawerObject
   layers:
   - Default
   - TransparentFX
