@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour {
         float angle =  ConvertPositiveAngle(transform.rotation.eulerAngles.y);
         if(positiveMovement)
         {
-            if(angle <= rightLimit)
+            if(Mathf.Abs((Mathf.Abs(angle) - rightLimit)) > 2.0f)
             {
                 transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime),Space.World);
             }
@@ -46,9 +46,11 @@ public class CameraController : MonoBehaviour {
             }
         }
         else
-        {            
-            if (Mathf.Abs(angle) >= leftLimit)
+        {
+            print("diff: " + (Mathf.Abs(angle) - leftLimit));
+            if (Mathf.Abs((Mathf.Abs(angle) - leftLimit)) > 2.0f)
             {
+                print("angle: " + Mathf.Abs(angle) + ", leftlimit: " + leftLimit);
                 transform.Rotate(Vector3.up * (-rotationSpeed * Time.deltaTime), Space.World);
             }
             else

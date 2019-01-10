@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iluminated: {fileID: 2100000, guid: 9a6024a0374e47c4eb3c432a4651aeee, type: 2}
+  redOne: {fileID: 2100000, guid: ffef0bd931f9bc3418a8cd5243d344f6, type: 2}
   keyMat: {fileID: 2100000, guid: 17d365b484b6b1140a0d63682ddbd438, type: 2}
   player: {fileID: 8813117107271939945}
   camera: {fileID: 8898967276914998113}
