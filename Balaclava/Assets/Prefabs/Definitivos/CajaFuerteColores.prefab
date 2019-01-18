@@ -956,7 +956,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelActive: 0
+  standardAudio: {fileID: 0}
+  goodAudio: {fileID: 0}
+  badAudio: {fileID: 0}
   key: 9078
+  door: {fileID: 0}
 --- !u!114 &4543415706016752985
 MonoBehaviour:
   m_ObjectHideFlags: 0

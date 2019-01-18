@@ -1,6 +1,6 @@
 mergeInto(LibraryManager.library, {
 
-  OpenUrlJs: function (str) {
-    window.open(str);
+  OpenUrlJs: function () {
+    window.open("https://sickmyduckinc.github.io/BalaclavaManual/");
   }
 });

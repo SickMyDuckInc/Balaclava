@@ -7,7 +7,8 @@ using System.Runtime.InteropServices;
 public class SceneController : MonoBehaviour
 {
     [DllImport("__Internal")]
-    private static extern void OpenUrlJs(string str);
+    private static extern void OpenUrlJs(string url);
+
     public void NextSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -20,6 +21,14 @@ public class SceneController : MonoBehaviour
 
     public void LoadUrl(string url)
     {
-        OpenUrlJs(url);
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            OpenUrlJs(url);
+        }
+        else
+        {
+            Application.OpenURL(url);
+        }
+        
     }
 }
